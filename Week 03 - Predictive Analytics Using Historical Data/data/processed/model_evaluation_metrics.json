@@ -1,0 +1,35 @@
+{
+  "Evaluation_Period": "2025-07-01 to 2025-12-31",
+  "Test_Sample_Days": 184,
+  "Models": [
+    {
+      "Model_Name": "Ridge Regression",
+      "R2_Score": 0.7629,
+      "RMSE": 3718.55,
+      "MAE": 2758.48,
+      "MAPE_Pct": 6.03
+    },
+    {
+      "Model_Name": "Random Forest Regressor",
+      "R2_Score": 0.5645,
+      "RMSE": 5039.91,
+      "MAE": 3424.52,
+      "MAPE_Pct": 7.43
+    },
+    {
+      "Model_Name": "Gradient Boosting",
+      "R2_Score": 0.5688,
+      "RMSE": 5014.93,
+      "MAE": 3453.44,
+      "MAPE_Pct": 7.35
+    },
+    {
+      "Model_Name": "Optimized Ensemble",
+      "R2_Score": 0.5794,
+      "RMSE": 4953.3,
+      "MAE": 3370.03,
+      "MAPE_Pct": 7.23
+    }
+  ],
+  "Best_Model": "Optimized Ensemble"
+}

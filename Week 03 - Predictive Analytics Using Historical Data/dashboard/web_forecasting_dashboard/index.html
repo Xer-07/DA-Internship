@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Predictive Analytics Studio | Enterprise Revenue Forecasting</title>
+  <meta name="description" content="Enterprise Predictive Analytics & Time Series Forecasting Studio featuring Ridge Regression, Random Forest Ensembles, 95% Confidence Intervals, and Scenario Modeling.">
+  
+  <!-- Modern Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dark-theme">
+  <div class="dashboard-layout">
+    
+    <!-- TOP NAVIGATION -->
+    <header class="top-nav" id="mainHeader">
+      <div class="nav-brand">
+        <div class="brand-logo">
+          <i class="fa-solid fa-arrow-trend-up"></i>
+        </div>
+        <div>
+          <h1 class="brand-title">ForecastIQ <span>Predictive AI</span></h1>
+          <p class="brand-subtitle">Time Series Forecasting & Machine Learning Intelligence</p>
+        </div>
+      </div>
+
+      <div class="nav-actions">
+        <div class="badge-status">
+          <span class="live-dot"></span> 36 Months Historical Basis Synced
+        </div>
+        <button id="exportCsvBtn" class="btn btn-secondary">
+          <i class="fa-solid fa-file-arrow-down"></i> Export Forecast CSV
+        </button>
+        <button id="printReportBtn" class="btn btn-primary">
+          <i class="fa-solid fa-print"></i> Print Strategy PDF
+        </button>
+        <button id="themeToggleBtn" class="btn btn-icon" title="Toggle Theme">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- SCENARIO & MODEL CONTROLS -->
+    <section class="filter-bar" id="filterControlBar">
+      <div class="filter-group">
+        <label for="scenarioFilter"><i class="fa-solid fa-sliders"></i> Economic Scenario</label>
+        <select id="scenarioFilter" class="filter-select">
+          <option value="Base">Base Case (+17.2% Projected Growth)</option>
+          <option value="Bull">Bull Case (+25.0% Upside Expansion)</option>
+          <option value="Bear">Bear Case (+8.0% Conservative Floor)</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label for="modelFilter"><i class="fa-solid fa-microchip"></i> Model Architecture</label>
+        <select id="modelFilter" class="filter-select">
+          <option value="Ensemble">Optimized Ensemble (RF + GBR)</option>
+          <option value="Ridge">Ridge Regression (L2 Regularized)</option>
+          <option value="RandomForest">Random Forest Regressor</option>
+          <option value="GradientBoosting">Gradient Boosting Regressor</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label for="horizonFilter"><i class="fa-regular fa-clock"></i> Forecast Horizon</label>
+        <select id="horizonFilter" class="filter-select">
+          <option value="Full">Full 12 Months (FY 2026)</option>
+          <option value="H1">H1 Only (Jan - Jun 2026)</option>
+          <option value="Q4">Q4 Focus (Oct - Dec 2026)</option>
+        </select>
+      </div>
+
+      <div class="filter-actions">
+        <button id="resetFiltersBtn" class="btn btn-ghost" title="Reset scenario parameters">
+          <i class="fa-solid fa-rotate-left"></i> Reset Defaults
+        </button>
+      </div>
+    </section>
+
+    <!-- KPI HIGHLIGHT CARDS -->
+    <main class="main-content">
+      <div class="kpi-grid" id="kpiGrid">
+        <div class="kpi-card card-revenue">
+          <div class="kpi-header">
+            <span class="kpi-label">FY 2026 FORECAST REVENUE</span>
+            <div class="kpi-icon-wrapper"><i class="fa-solid fa-dollar-sign"></i></div>
+          </div>
+          <div class="kpi-value" id="kpiForecastRev">$17,164,139</div>
+          <div class="kpi-footer">
+            <span class="badge badge-success" id="kpiGrowthBadge">+17.2% YoY</span>
+            <span class="kpi-hint">Annual Projection</span>
+          </div>
+        </div>
+
+        <div class="kpi-card card-accuracy">
+          <div class="kpi-header">
+            <span class="kpi-label">MODEL ACCURACY (HOLDOUT)</span>
+            <div class="kpi-icon-wrapper"><i class="fa-solid fa-bullseye"></i></div>
+          </div>
+          <div class="kpi-value" id="kpiAccuracy">93.97%</div>
+          <div class="kpi-footer">
+            <span class="badge badge-info" id="kpiMapeBadge">6.03% MAPE</span>
+            <span class="kpi-hint">Holdout Validated</span>
+          </div>
+        </div>
+
+        <div class="kpi-card card-benchmark">
+          <div class="kpi-header">
+            <span class="kpi-label">R2 SCORE BENCHMARK</span>
+            <div class="kpi-icon-wrapper"><i class="fa-solid fa-chart-line"></i></div>
+          </div>
+          <div class="kpi-value" id="kpiR2">0.7629</div>
+          <div class="kpi-footer">
+            <span class="badge badge-purple">Ridge Regularized</span>
+            <span class="kpi-hint">Low variance error</span>
+          </div>
+        </div>
+
+        <div class="kpi-card card-ci">
+          <div class="kpi-header">
+            <span class="kpi-label">95% CONFIDENCE BAND</span>
+            <div class="kpi-icon-wrapper"><i class="fa-solid fa-shield-halved"></i></div>
+          </div>
+          <div class="kpi-value" id="kpiCi">+/- 5.8%</div>
+          <div class="kpi-footer">
+            <span class="badge badge-warning">Gaussian Interval</span>
+            <span class="kpi-hint">2-Sigma Precision</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CHARTS SECTION ROW 1 -->
+      <div class="charts-row">
+        <!-- Multi-Year Trajectory & 12M Out-of-Sample Forecast -->
+        <div class="chart-card chart-large">
+          <div class="chart-header">
+            <div>
+              <h3 class="chart-title">Historical Sales & 12-Month Out-of-Sample Forecast</h3>
+              <p class="chart-desc">Historical monthly performance (2023-2025) coupled with FY 2026 forward projections</p>
+            </div>
+            <div class="chart-legend-custom">
+              <span class="legend-item"><span class="dot dot-blue"></span> Historical Actual</span>
+              <span class="legend-item"><span class="dot dot-green"></span> Base Forecast</span>
+              <span class="legend-item"><span class="dot dot-amber"></span> Upper Bound</span>
+              <span class="legend-item"><span class="dot dot-red"></span> Lower Bound</span>
+            </div>
+          </div>
+          <div class="chart-canvas-wrapper">
+            <canvas id="forecastTrajectoryChart"></canvas>
+          </div>
+        </div>
+
+        <!-- Model Error & Accuracy Comparison -->
+        <div class="chart-card chart-small">
+          <div class="chart-header">
+            <div>
+              <h3 class="chart-title">Model Accuracy Comparison</h3>
+              <p class="chart-desc">R2 Score across competing model algorithms</p>
+            </div>
+          </div>
+          <div class="chart-canvas-wrapper">
+            <canvas id="modelComparisonChart"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- CHARTS SECTION ROW 2 -->
+      <div class="charts-row">
+        <!-- Feature Drivers Ranking -->
+        <div class="chart-card chart-medium">
+          <div class="chart-header">
+            <div>
+              <h3 class="chart-title">Feature Driver Predictive Importance</h3>
+              <p class="chart-desc">Relative explanatory weight across regression and tree ensembles</p>
+            </div>
+          </div>
+          <div class="chart-canvas-wrapper">
+            <canvas id="featureImportanceChart"></canvas>
+          </div>
+        </div>
+
+        <!-- Monthly Seasonality Trajectory -->
+        <div class="chart-card chart-medium">
+          <div class="chart-header">
+            <div>
+              <h3 class="chart-title">Monthly Seasonality & Q4 Surge Profile</h3>
+              <p class="chart-desc">Cyclical sales multipliers and holiday quarter lift patterns</p>
+            </div>
+          </div>
+          <div class="chart-canvas-wrapper">
+            <canvas id="seasonalityBarChart"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- FORECAST DATA TABLE -->
+      <div class="data-table-card" id="tableCard">
+        <div class="table-header">
+          <div>
+            <h3 class="table-title">Live 12-Month Forecast Projections Explorer</h3>
+            <p class="table-subtitle">Showing active sliced daily and monthly forecast predictions</p>
+          </div>
+          <div class="table-search-box">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <input type="text" id="tableSearchInput" placeholder="Search forecast date (e.g. 2026-11)...">
+          </div>
+        </div>
+
+        <div class="table-responsive">
+          <table class="data-table" id="forecastTable">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Projected Revenue</th>
+                <th>Lower Bound (95% CI)</th>
+                <th>Upper Bound (95% CI)</th>
+                <th>Bull Scenario (+12%)</th>
+                <th>Bear Scenario (-10%)</th>
+                <th>Planned Ad Spend</th>
+                <th>Estimated Sessions</th>
+              </tr>
+            </thead>
+            <tbody id="forecastTableBody">
+              <!-- Populated via app.js -->
+            </tbody>
+          </table>
+        </div>
+
+        <div class="table-pagination">
+          <span class="pagination-info" id="paginationInfo">Showing 1 to 15 of 365 projected days</span>
+          <div class="pagination-buttons">
+            <button id="prevPageBtn" class="btn btn-sm btn-secondary" disabled>
+              <i class="fa-solid fa-chevron-left"></i> Previous
+            </button>
+            <span class="current-page-badge" id="currentPageBadge">Page 1</span>
+            <button id="nextPageBtn" class="btn btn-sm btn-secondary">
+              Next <i class="fa-solid fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="dashboard-footer">
+      <div>
+        <strong>Data Analytics Internship</strong> - Week 03 Capstone Project
+      </div>
+      <div>
+        Predictive Analytics Studio - Built with Scikit-Learn & Chart.js
+      </div>
+    </footer>
+  </div>
+
+  <!-- LOAD DATASET -->
+  <script src="forecast_data.js"></script>
+  <!-- APPLICATION SCRIPT -->
+  <script src="app.js"></script>
+</body>
+</html>

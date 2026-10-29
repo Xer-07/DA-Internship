@@ -10,8 +10,31 @@ Welcome to the official portfolio repository for the **Data Analytics Internship
 | :---: | :--- | :--- | :---: | :---: |
 | **01** | [**Sales & Revenue Analysis Dashboard**](./Week%2001%20-%20Sales%20%26%20Revenue%20Analysis%20Dashboard/) | Multi-source Ingestion, KPI Tracking, Streamlit & Web BI | **05 Nov 2026** | **COMPLETED** |
 | **02** | [**Customer Segmentation Project**](./Week%2002%20-%20Customer%20Segmentation%20Project/) | RFM Modeling, K-Means Clustering, Scikit-Learn | **12 Nov 2026** | **COMPLETED** |
-| **03** | **Predictive Analytics Using Historical Data** | Time Series Forecasting, Regression, Model Evaluation | **19 Nov 2026** | Scheduled |
+| **03** | [**Predictive Analytics Using Historical Data**](./Week%2003%20-%20Predictive%20Analytics%20Using%20Historical%20Data/) | Time Series Forecasting, Regression, Model Evaluation | **19 Nov 2026** | **COMPLETED** |
 | **04** | **Data Cleaning & Reporting Automation** | Automated Workflows, Anomaly Detection, PDF Reports | **26 Nov 2026** | Scheduled |
+
+---
+
+## Week 3 Highlights: Predictive Analytics Using Historical Data
+
+> **Project Directory:** [`Week 03 - Predictive Analytics Using Historical Data/`](./Week%2003%20-%20Predictive%20Analytics%20Using%20Historical%20Data/)  
+> **Tutorial Reference:** [YouTube Tutorial Guide](https://youtu.be/zZwunHv3Zog?si=It9hIsL3U1a1dpf3)
+
+### Executive Forecasting Projections
+- **FY 2026 Forecast Revenue:** **$17,164,139.08** (+17.2% top-line projected expansion)
+- **Model Accuracy (Holdout Test):** **93.97% Accuracy** (6.03% MAPE across 184 test days)
+- **Top Regression Model R2:** **0.7629** (Ridge Regularization with engineered lag and rolling window features)
+- **95% Confidence Interval:** Annual bounds statistically constrained to **$16.14M (Lower)** - **$18.18M (Upper)**
+- **Scenario Planning:** Bull Case yields **$19.22M (+25.0%)**, Bear Case maintains **$15.45M (+8.0%)**
+
+### Deliverables Included:
+1. **Interactive Forecasting Studio:** Dynamic Streamlit application (`streamlit_forecasting_app.py`) with model selection, scenario toggling, and 95% confidence interval bands.
+2. **Standalone Web Dashboard:** Zero-dependency web application (`index.html`) using Vanilla JavaScript and Chart.js with interactive time series trajectories and scenario slicers.
+3. **Pre-Executed Jupyter Notebook:** [`03_predictive_forecasting_modeling.ipynb`](./Week%2003%20-%20Predictive%20Analytics%20Using%20Historical%20Data/notebooks/03_predictive_forecasting_modeling.ipynb) featuring lag engineering, chronological splits, model evaluations, and forward forecasts.
+4. **Predictive Engine Pipeline:** Production script (`predictive_engine.py`) automating feature pipelines, multi-model evaluation, and 12-month projections.
+5. **C-Level Forecasting Report:** [`Predictive_Forecasting_Report.md`](./Week%2003%20-%20Predictive%20Analytics%20Using%20Historical%20Data/reports/Predictive_Forecasting_Report.md) detailing accuracy metrics, seasonal components, and economic scenario modeling.
+
+![Predictive Forecasting Preview](./Week%2003%20-%20Predictive%20Analytics%20Using%20Historical%20Data/reports/assets/forecasting_executive_summary_card.png)
 
 ---
 
