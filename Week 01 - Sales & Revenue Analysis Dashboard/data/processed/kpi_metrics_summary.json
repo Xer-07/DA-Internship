@@ -1,0 +1,656 @@
+{
+  "ExecutiveSummary": {
+    "TotalRevenue": 5649578.26,
+    "TotalGrossSales": 5957454.52,
+    "TotalDiscountAmount": 307876.26,
+    "TotalCOGS": 3735843.5,
+    "TotalProfit": 1913734.76,
+    "ProfitMarginPct": 33.87,
+    "TotalOrders": 3500,
+    "TotalCustomers": 450,
+    "TotalUnitsSold": 9874,
+    "AverageOrderValue": 1614.17,
+    "AverageRevenuePerCustomer": 12554.62,
+    "AverageDiscountPct": 5.14,
+    "YoYRevenueGrowthPct": 17.65
+  },
+  "MonthlyTrend": [
+    {
+      "YearMonth": "2024-01",
+      "Revenue": 194076.45,
+      "Profit": 67846.45,
+      "Orders": 115,
+      "Units": 299,
+      "Margin": 34.96
+    },
+    {
+      "YearMonth": "2024-02",
+      "Revenue": 114842.01,
+      "Profit": 38115.01,
+      "Orders": 68,
+      "Units": 204,
+      "Margin": 33.19
+    },
+    {
+      "YearMonth": "2024-03",
+      "Revenue": 163303.98,
+      "Profit": 54173.98,
+      "Orders": 98,
+      "Units": 307,
+      "Margin": 33.17
+    },
+    {
+      "YearMonth": "2024-04",
+      "Revenue": 148165.19,
+      "Profit": 50285.19,
+      "Orders": 103,
+      "Units": 295,
+      "Margin": 33.94
+    },
+    {
+      "YearMonth": "2024-05",
+      "Revenue": 157438.84,
+      "Profit": 52408.84,
+      "Orders": 86,
+      "Units": 233,
+      "Margin": 33.29
+    },
+    {
+      "YearMonth": "2024-06",
+      "Revenue": 136922.59,
+      "Profit": 44216.59,
+      "Orders": 104,
+      "Units": 276,
+      "Margin": 32.29
+    },
+    {
+      "YearMonth": "2024-07",
+      "Revenue": 138998.19,
+      "Profit": 46424.19,
+      "Orders": 101,
+      "Units": 274,
+      "Margin": 33.4
+    },
+    {
+      "YearMonth": "2024-08",
+      "Revenue": 139022.52,
+      "Profit": 49383.52,
+      "Orders": 101,
+      "Units": 293,
+      "Margin": 35.52
+    },
+    {
+      "YearMonth": "2024-09",
+      "Revenue": 117989.7,
+      "Profit": 37043.2,
+      "Orders": 101,
+      "Units": 264,
+      "Margin": 31.4
+    },
+    {
+      "YearMonth": "2024-10",
+      "Revenue": 203285.81,
+      "Profit": 70777.81,
+      "Orders": 114,
+      "Units": 388,
+      "Margin": 34.82
+    },
+    {
+      "YearMonth": "2024-11",
+      "Revenue": 156753.35,
+      "Profit": 50188.85,
+      "Orders": 107,
+      "Units": 273,
+      "Margin": 32.02
+    },
+    {
+      "YearMonth": "2024-12",
+      "Revenue": 182669.22,
+      "Profit": 64255.72,
+      "Orders": 110,
+      "Units": 286,
+      "Margin": 35.18
+    },
+    {
+      "YearMonth": "2025-01",
+      "Revenue": 139874.02,
+      "Profit": 47144.52,
+      "Orders": 102,
+      "Units": 285,
+      "Margin": 33.7
+    },
+    {
+      "YearMonth": "2025-02",
+      "Revenue": 153568.48,
+      "Profit": 52040.48,
+      "Orders": 81,
+      "Units": 249,
+      "Margin": 33.89
+    },
+    {
+      "YearMonth": "2025-03",
+      "Revenue": 170293.98,
+      "Profit": 60813.98,
+      "Orders": 120,
+      "Units": 348,
+      "Margin": 35.71
+    },
+    {
+      "YearMonth": "2025-04",
+      "Revenue": 202575.19,
+      "Profit": 67188.69,
+      "Orders": 113,
+      "Units": 311,
+      "Margin": 33.17
+    },
+    {
+      "YearMonth": "2025-05",
+      "Revenue": 201767.67,
+      "Profit": 70101.67,
+      "Orders": 110,
+      "Units": 307,
+      "Margin": 34.74
+    },
+    {
+      "YearMonth": "2025-06",
+      "Revenue": 209228.6,
+      "Profit": 73702.6,
+      "Orders": 117,
+      "Units": 322,
+      "Margin": 35.23
+    },
+    {
+      "YearMonth": "2025-07",
+      "Revenue": 205620.03,
+      "Profit": 64974.53,
+      "Orders": 119,
+      "Units": 345,
+      "Margin": 31.6
+    },
+    {
+      "YearMonth": "2025-08",
+      "Revenue": 148000.9,
+      "Profit": 50327.4,
+      "Orders": 108,
+      "Units": 287,
+      "Margin": 34.0
+    },
+    {
+      "YearMonth": "2025-09",
+      "Revenue": 199970.45,
+      "Profit": 64906.95,
+      "Orders": 101,
+      "Units": 274,
+      "Margin": 32.46
+    },
+    {
+      "YearMonth": "2025-10",
+      "Revenue": 178196.13,
+      "Profit": 58453.13,
+      "Orders": 99,
+      "Units": 283,
+      "Margin": 32.8
+    },
+    {
+      "YearMonth": "2025-11",
+      "Revenue": 183970.44,
+      "Profit": 63480.44,
+      "Orders": 110,
+      "Units": 311,
+      "Margin": 34.51
+    },
+    {
+      "YearMonth": "2025-12",
+      "Revenue": 187528.39,
+      "Profit": 63770.39,
+      "Orders": 120,
+      "Units": 325,
+      "Margin": 34.01
+    },
+    {
+      "YearMonth": "2026-01",
+      "Revenue": 173436.65,
+      "Profit": 58118.15,
+      "Orders": 107,
+      "Units": 257,
+      "Margin": 33.51
+    },
+    {
+      "YearMonth": "2026-02",
+      "Revenue": 172757.73,
+      "Profit": 59949.23,
+      "Orders": 107,
+      "Units": 346,
+      "Margin": 34.7
+    },
+    {
+      "YearMonth": "2026-03",
+      "Revenue": 163713.54,
+      "Profit": 57003.54,
+      "Orders": 110,
+      "Units": 317,
+      "Margin": 34.82
+    },
+    {
+      "YearMonth": "2026-04",
+      "Revenue": 192439.5,
+      "Profit": 68630.5,
+      "Orders": 103,
+      "Units": 312,
+      "Margin": 35.66
+    },
+    {
+      "YearMonth": "2026-05",
+      "Revenue": 235438.86,
+      "Profit": 75250.86,
+      "Orders": 120,
+      "Units": 349,
+      "Margin": 31.96
+    },
+    {
+      "YearMonth": "2026-06",
+      "Revenue": 121625.82,
+      "Profit": 43517.32,
+      "Orders": 101,
+      "Units": 255,
+      "Margin": 35.78
+    },
+    {
+      "YearMonth": "2026-07",
+      "Revenue": 178872.17,
+      "Profit": 58708.17,
+      "Orders": 102,
+      "Units": 270,
+      "Margin": 32.82
+    },
+    {
+      "YearMonth": "2026-08",
+      "Revenue": 165927.58,
+      "Profit": 55774.08,
+      "Orders": 109,
+      "Units": 327,
+      "Margin": 33.61
+    },
+    {
+      "YearMonth": "2026-09",
+      "Revenue": 137575.52,
+      "Profit": 49482.02,
+      "Orders": 89,
+      "Units": 264,
+      "Margin": 35.97
+    },
+    {
+      "YearMonth": "2026-10",
+      "Revenue": 73728.76,
+      "Profit": 25276.76,
+      "Orders": 44,
+      "Units": 138,
+      "Margin": 34.28
+    }
+  ],
+  "CategoryBreakdown": [
+    {
+      "Category": "Technology",
+      "Revenue": 3706724.13,
+      "Profit": 1159879.13,
+      "Units": 4159,
+      "Margin": 31.29,
+      "RevenueShare": 65.61
+    },
+    {
+      "Category": "Furniture",
+      "Revenue": 1795649.4,
+      "Profit": 692404.4,
+      "Units": 2955,
+      "Margin": 38.56,
+      "RevenueShare": 31.78
+    },
+    {
+      "Category": "Office Supplies",
+      "Revenue": 147204.73,
+      "Profit": 61451.23,
+      "Units": 2760,
+      "Margin": 41.75,
+      "RevenueShare": 2.61
+    }
+  ],
+  "SubCategoryBreakdown": [
+    {
+      "Category": "Technology",
+      "Sub_Category": "Laptops & Computers",
+      "Revenue": 1602489.01,
+      "Profit": 426229.01,
+      "Units": 917,
+      "Margin": 26.6
+    },
+    {
+      "Category": "Technology",
+      "Sub_Category": "Phones & Tablets",
+      "Revenue": 1102158.77,
+      "Profit": 378818.77,
+      "Units": 1033,
+      "Margin": 34.37
+    },
+    {
+      "Category": "Furniture",
+      "Sub_Category": "Office Chairs",
+      "Revenue": 853994.5,
+      "Profit": 305704.5,
+      "Units": 818,
+      "Margin": 35.8
+    },
+    {
+      "Category": "Furniture",
+      "Sub_Category": "Desks & Workstations",
+      "Revenue": 624820.05,
+      "Profit": 256980.05,
+      "Units": 966,
+      "Margin": 41.13
+    },
+    {
+      "Category": "Technology",
+      "Sub_Category": "Networking & Storage",
+      "Revenue": 499974.67,
+      "Profit": 165154.67,
+      "Units": 665,
+      "Margin": 33.03
+    },
+    {
+      "Category": "Technology",
+      "Sub_Category": "Peripherals & Accessories",
+      "Revenue": 338646.18,
+      "Profit": 121941.18,
+      "Units": 1032,
+      "Margin": 36.01
+    },
+    {
+      "Category": "Furniture",
+      "Sub_Category": "Storage & Bookcases",
+      "Revenue": 226473.75,
+      "Profit": 91223.75,
+      "Units": 575,
+      "Margin": 40.28
+    },
+    {
+      "Category": "Technology",
+      "Sub_Category": "Audio & Video",
+      "Revenue": 163455.5,
+      "Profit": 67735.5,
+      "Units": 512,
+      "Margin": 41.44
+    },
+    {
+      "Category": "Furniture",
+      "Sub_Category": "Lighting & Decor",
+      "Revenue": 90361.1,
+      "Profit": 38496.1,
+      "Units": 596,
+      "Margin": 42.6
+    },
+    {
+      "Category": "Office Supplies",
+      "Sub_Category": "Paper & Printing",
+      "Revenue": 84188.8,
+      "Profit": 31007.8,
+      "Units": 668,
+      "Margin": 36.83
+    },
+    {
+      "Category": "Office Supplies",
+      "Sub_Category": "Desk Organization",
+      "Revenue": 20170.68,
+      "Profit": 10106.68,
+      "Units": 612,
+      "Margin": 50.11
+    },
+    {
+      "Category": "Office Supplies",
+      "Sub_Category": "Writing & Markers",
+      "Revenue": 15633.6,
+      "Profit": 7507.6,
+      "Units": 565,
+      "Margin": 48.02
+    },
+    {
+      "Category": "Office Supplies",
+      "Sub_Category": "Breakroom Supplies",
+      "Revenue": 13793.09,
+      "Profit": 6227.09,
+      "Units": 291,
+      "Margin": 45.15
+    },
+    {
+      "Category": "Office Supplies",
+      "Sub_Category": "Binders & Filing",
+      "Revenue": 13418.56,
+      "Profit": 6602.06,
+      "Units": 624,
+      "Margin": 49.2
+    }
+  ],
+  "TopProducts": [
+    {
+      "Product_ID": "TEC-LA-602",
+      "Product_Name": "Apple MacBook Pro 16-inch M3",
+      "Category": "Technology",
+      "Revenue": 39984.0,
+      "Profit": 11984.0,
+      "Units_Sold": 16,
+      "Orders_Count": 2,
+      "Margin": 29.97
+    },
+    {
+      "Product_ID": "TEC-LA-809",
+      "Product_Name": "Apple MacBook Pro 16-inch M3",
+      "Category": "Technology",
+      "Revenue": 24990.0,
+      "Profit": 7490.0,
+      "Units_Sold": 10,
+      "Orders_Count": 1,
+      "Margin": 29.97
+    },
+    {
+      "Product_ID": "TEC-LA-902",
+      "Product_Name": "Apple MacBook Pro 16-inch M3",
+      "Category": "Technology",
+      "Revenue": 21116.55,
+      "Profit": 5366.55,
+      "Units_Sold": 9,
+      "Orders_Count": 2,
+      "Margin": 25.41
+    },
+    {
+      "Product_ID": "TEC-LA-771",
+      "Product_Name": "Apple MacBook Pro 16-inch M3",
+      "Category": "Technology",
+      "Revenue": 19992.0,
+      "Profit": 5992.0,
+      "Units_Sold": 8,
+      "Orders_Count": 1,
+      "Margin": 29.97
+    },
+    {
+      "Product_ID": "TEC-LA-725",
+      "Product_Name": "Apple MacBook Pro 16-inch M3",
+      "Category": "Technology",
+      "Revenue": 17493.0,
+      "Profit": 5243.0,
+      "Units_Sold": 7,
+      "Orders_Count": 1,
+      "Margin": 29.97
+    },
+    {
+      "Product_ID": "TEC-LA-793",
+      "Product_Name": "Apple MacBook Pro 16-inch M3",
+      "Category": "Technology",
+      "Revenue": 17493.0,
+      "Profit": 5243.0,
+      "Units_Sold": 7,
+      "Orders_Count": 1,
+      "Margin": 29.97
+    },
+    {
+      "Product_ID": "FUR-OF-495",
+      "Product_Name": "Herman Miller Aeron Ergonomic Chair",
+      "Category": "Furniture",
+      "Revenue": 17228.25,
+      "Profit": 6178.25,
+      "Units_Sold": 13,
+      "Orders_Count": 1,
+      "Margin": 35.86
+    },
+    {
+      "Product_ID": "TEC-LA-807",
+      "Product_Name": "Dell XPS 15 InfinityEdge Laptop",
+      "Category": "Technology",
+      "Revenue": 16999.9,
+      "Profit": 5499.9,
+      "Units_Sold": 10,
+      "Orders_Count": 2,
+      "Margin": 32.35
+    },
+    {
+      "Product_ID": "TEC-LA-855",
+      "Product_Name": "Apple MacBook Pro 16-inch M3",
+      "Category": "Technology",
+      "Revenue": 16993.2,
+      "Profit": 2993.2,
+      "Units_Sold": 8,
+      "Orders_Count": 1,
+      "Margin": 17.61
+    },
+    {
+      "Product_ID": "TEC-LA-593",
+      "Product_Name": "Dell XPS 15 InfinityEdge Laptop",
+      "Category": "Technology",
+      "Revenue": 16149.9,
+      "Profit": 4649.9,
+      "Units_Sold": 10,
+      "Orders_Count": 1,
+      "Margin": 28.79
+    }
+  ],
+  "RegionalPerformance": [
+    {
+      "Region": "Central",
+      "Revenue": 1634403.79,
+      "Profit": 553758.29,
+      "Orders": 1028,
+      "Units": 2893,
+      "Margin": 33.88,
+      "RevenueShare": 28.93
+    },
+    {
+      "Region": "South",
+      "Revenue": 1397410.97,
+      "Profit": 476345.47,
+      "Orders": 840,
+      "Units": 2325,
+      "Margin": 34.09,
+      "RevenueShare": 24.73
+    },
+    {
+      "Region": "West",
+      "Revenue": 1330423.09,
+      "Profit": 450527.59,
+      "Orders": 801,
+      "Units": 2294,
+      "Margin": 33.86,
+      "RevenueShare": 23.55
+    },
+    {
+      "Region": "East",
+      "Revenue": 1287340.41,
+      "Profit": 433103.41,
+      "Orders": 831,
+      "Units": 2362,
+      "Margin": 33.64,
+      "RevenueShare": 22.79
+    }
+  ],
+  "CustomerSegments": [
+    {
+      "Segment": "Corporate",
+      "Revenue": 2727238.69,
+      "Profit": 928267.19,
+      "Customers": 137,
+      "Orders": 1064,
+      "Margin": 34.04,
+      "RevenueShare": 48.27
+    },
+    {
+      "Segment": "Consumer",
+      "Revenue": 2045379.49,
+      "Profit": 684434.99,
+      "Customers": 238,
+      "Orders": 1811,
+      "Margin": 33.46,
+      "RevenueShare": 36.2
+    },
+    {
+      "Segment": "Home Office",
+      "Revenue": 876960.08,
+      "Profit": 301032.58,
+      "Customers": 75,
+      "Orders": 625,
+      "Margin": 34.33,
+      "RevenueShare": 15.52
+    }
+  ],
+  "PaymentMethods": [
+    {
+      "Method": "Credit Card",
+      "Revenue": 2763843.85,
+      "Transactions": 1675,
+      "Share": 48.92
+    },
+    {
+      "Method": "Direct Wire",
+      "Revenue": 1221614.9,
+      "Transactions": 757,
+      "Share": 21.62
+    },
+    {
+      "Method": "PayPal",
+      "Revenue": 1002227.82,
+      "Transactions": 651,
+      "Share": 17.74
+    },
+    {
+      "Method": "Corporate ACH",
+      "Revenue": 661891.69,
+      "Transactions": 417,
+      "Share": 11.72
+    }
+  ],
+  "DiscountImpact": [
+    {
+      "Tier": "No Discount (0%)",
+      "Revenue": 3355376.52,
+      "Profit": 1253955.52,
+      "Orders": 1968,
+      "Margin": 37.37
+    },
+    {
+      "Tier": "Low (1-10%)",
+      "Revenue": 1530645.04,
+      "Profit": 495831.54,
+      "Orders": 984,
+      "Margin": 32.39
+    },
+    {
+      "Tier": "Moderate (11-20%)",
+      "Revenue": 631223.16,
+      "Profit": 151286.66,
+      "Orders": 447,
+      "Margin": 23.97
+    },
+    {
+      "Tier": "High (>20%)",
+      "Revenue": 132333.54,
+      "Profit": 12661.04,
+      "Orders": 101,
+      "Margin": 9.57
+    }
+  ]
+}

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sales & Revenue Analytics Dashboard | Executive BI Suite</title>
+  <meta name="description" content="High-impact enterprise Sales & Revenue Analysis Dashboard featuring dynamic KPI cards, multi-dimensional slicers, and interactive Chart.js visualizations.">
+  
+  <!-- Modern Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome CDN for clean enterprise icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dark-theme">
+  <!-- APP CONTAINER -->
+  <div class="dashboard-layout">
+    
+    <!-- TOP NAVIGATION BAR -->
+    <header class="top-nav" id="mainHeader">
+      <div class="nav-brand">
+        <div class="brand-logo">
+          <i class="fa-solid fa-chart-line"></i>
+        </div>
+        <div>
+          <h1 class="brand-title">ApexAnalytics <span>Enterprise BI</span></h1>
+          <p class="brand-subtitle">Executive Sales & Revenue Performance Intelligence</p>
+        </div>
+      </div>
+
+      <div class="nav-actions">
+        <div class="badge-status">
+          <span class="live-dot"></span> 3,500 Transactions Synced
+        </div>
+        <button id="exportCsvBtn" class="btn btn-secondary">
+          <i class="fa-solid fa-file-arrow-down"></i> Export CSV
+        </button>
+        <button id="printReportBtn" class="btn btn-primary">
+          <i class="fa-solid fa-print"></i> Print Executive PDF
+        </button>
+        <button id="themeToggleBtn" class="btn btn-icon" title="Toggle Theme">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- SLICER FILTER CONTROL BAR -->
+    <section class="filter-bar" id="filterControlBar">
+      <div class="filter-group">
+        <label for="yearFilter"><i class="fa-regular fa-calendar"></i> Year</label>
+        <select id="yearFilter" class="filter-select">
+          <option value="All">All Years (2024 - 2026)</option>
+          <option value="2024">FY 2024</option>
+          <option value="2025">FY 2025</option>
+          <option value="2026">FY 2026</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label for="regionFilter"><i class="fa-solid fa-earth-americas"></i> Region</label>
+        <select id="regionFilter" class="filter-select">
+          <option value="All">All Regions</option>
+          <option value="West">West Region</option>
+          <option value="East">East Region</option>
+          <option value="Central">Central Region</option>
+          <option value="South">South Region</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label for="categoryFilter"><i class="fa-solid fa-boxes-stacked"></i> Category</label>
+        <select id="categoryFilter" class="filter-select">
+          <option value="All">All Categories</option>
+          <option value="Technology">Technology</option>
+          <option value="Furniture">Furniture</option>
+          <option value="Office Supplies">Office Supplies</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label for="segmentFilter"><i class="fa-solid fa-users-gear"></i> Segment</label>
+        <select id="segmentFilter" class="filter-select">
+          <option value="All">All Segments</option>
+          <option value="Consumer">Consumer</option>
+          <option value="Corporate">Corporate</option>
+          <option value="Home Office">Home Office</option>
+        </select>
+      </div>
+
+      <div class="filter-actions">
+        <button id="resetFiltersBtn" class="btn btn-ghost" title="Reset all slicers">
+          <i class="fa-solid fa-rotate-left"></i> Reset Slicers
+        </button>
+      </div>
+    </section>
+
+    <!-- KPI HIGHLIGHT CARDS -->
+    <main class="main-content">
+      <div class="kpi-grid" id="kpiGrid">
+        <!-- KPI 1: Total Revenue -->
+        <div class="kpi-card card-revenue">
+          <div class="kpi-header">
+            <span class="kpi-label">TOTAL REVENUE (NET)</span>
+            <div class="kpi-icon-wrapper"><i class="fa-solid fa-dollar-sign"></i></div>
+          </div>
+          <div class="kpi-value" id="kpiRevenue">$0.00</div>
+          <div class="kpi-footer">
+            <span class="badge badge-success" id="kpiRevenueBadge">+17.65% YoY</span>
+            <span class="kpi-hint">Gross: <strong id="kpiGross">$0.00</strong></span>
+          </div>
+        </div>
+
+        <!-- KPI 2: Total Net Profit -->
+        <div class="kpi-card card-profit">
+          <div class="kpi-header">
+            <span class="kpi-label">NET PROFIT</span>
+            <div class="kpi-icon-wrapper"><i class="fa-solid fa-vault"></i></div>
+          </div>
+          <div class="kpi-value" id="kpiProfit">$0.00</div>
+          <div class="kpi-footer">
+            <span class="badge badge-success" id="kpiMarginBadge">33.9% Margin</span>
+            <span class="kpi-hint">COGS: <strong id="kpiCogs">$0.00</strong></span>
+          </div>
+        </div>
+
+        <!-- KPI 3: Total Orders -->
+        <div class="kpi-card card-orders">
+          <div class="kpi-header">
+            <span class="kpi-label">TOTAL ORDERS</span>
+            <div class="kpi-icon-wrapper"><i class="fa-solid fa-receipt"></i></div>
+          </div>
+          <div class="kpi-value" id="kpiOrders">0</div>
+          <div class="kpi-footer">
+            <span class="badge badge-info" id="kpiCustomersBadge">450 Customers</span>
+            <span class="kpi-hint">100% Fulfillment</span>
+          </div>
+        </div>
+
+        <!-- KPI 4: Units Sold -->
+        <div class="kpi-card card-units">
+          <div class="kpi-header">
+            <span class="kpi-label">TOTAL UNITS SOLD</span>
+            <div class="kpi-icon-wrapper"><i class="fa-solid fa-truck-ramp-box"></i></div>
+          </div>
+          <div class="kpi-value" id="kpiUnits">0</div>
+          <div class="kpi-footer">
+            <span class="badge badge-warning" id="kpiDiscountBadge">Avg 5.1% Disc</span>
+            <span class="kpi-hint">High velocity</span>
+          </div>
+        </div>
+
+        <!-- KPI 5: Average Order Value (AOV) -->
+        <div class="kpi-card card-aov">
+          <div class="kpi-header">
+            <span class="kpi-label">AVG ORDER VALUE (AOV)</span>
+            <div class="kpi-icon-wrapper"><i class="fa-solid fa-cart-shopping"></i></div>
+          </div>
+          <div class="kpi-value" id="kpiAov">$0.00</div>
+          <div class="kpi-footer">
+            <span class="badge badge-purple" id="kpiArpcBadge">$12.5K / Cust</span>
+            <span class="kpi-hint">Enterprise Scale</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CHARTS SECTION ROW 1 -->
+      <div class="charts-row">
+        <!-- Monthly Revenue Trendline -->
+        <div class="chart-card chart-large">
+          <div class="chart-header">
+            <div>
+              <h3 class="chart-title">Revenue & Net Profit Trajectory</h3>
+              <p class="chart-desc">Chronological monthly financial progression and profit correlation</p>
+            </div>
+            <div class="chart-legend-custom">
+              <span class="legend-item"><span class="dot dot-blue"></span> Net Revenue</span>
+              <span class="legend-item"><span class="dot dot-green"></span> Net Profit</span>
+            </div>
+          </div>
+          <div class="chart-canvas-wrapper">
+            <canvas id="monthlyTrendChart"></canvas>
+          </div>
+        </div>
+
+        <!-- Regional Share Doughnut -->
+        <div class="chart-card chart-small">
+          <div class="chart-header">
+            <div>
+              <h3 class="chart-title">Regional Sales Contribution</h3>
+              <p class="chart-desc">Geographic revenue split across enterprise territories</p>
+            </div>
+          </div>
+          <div class="chart-canvas-wrapper donut-wrapper">
+            <canvas id="regionalDonutChart"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- CHARTS SECTION ROW 2 -->
+      <div class="charts-row">
+        <!-- Category & Subcategory Performance -->
+        <div class="chart-card chart-medium">
+          <div class="chart-header">
+            <div>
+              <h3 class="chart-title">Revenue by Product Category</h3>
+              <p class="chart-desc">Comparative breakdown of Revenue vs Operating Profit</p>
+            </div>
+          </div>
+          <div class="chart-canvas-wrapper">
+            <canvas id="categoryBarChart"></canvas>
+          </div>
+        </div>
+
+        <!-- Top 10 High Performing Products -->
+        <div class="chart-card chart-medium">
+          <div class="chart-header">
+            <div>
+              <h3 class="chart-title">Top 10 Flagship Products</h3>
+              <p class="chart-desc">Ranked by overall net sales revenue contribution</p>
+            </div>
+          </div>
+          <div class="chart-canvas-wrapper">
+            <canvas id="topProductsChart"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- CHARTS SECTION ROW 3 -->
+      <div class="charts-row">
+        <!-- Customer Segment Revenue -->
+        <div class="chart-card chart-medium">
+          <div class="chart-header">
+            <div>
+              <h3 class="chart-title">Customer Segment Mix</h3>
+              <p class="chart-desc">Distribution of purchasing power: Corporate vs Consumer vs Home Office</p>
+            </div>
+          </div>
+          <div class="chart-canvas-wrapper">
+            <canvas id="segmentBarChart"></canvas>
+          </div>
+        </div>
+
+        <!-- Discount Sensitivity vs Margin -->
+        <div class="chart-card chart-medium">
+          <div class="chart-header">
+            <div>
+              <h3 class="chart-title">Promotional Discount vs Margin Health</h3>
+              <p class="chart-desc">Impact of discounting tiers on retained profit margin %</p>
+            </div>
+          </div>
+          <div class="chart-canvas-wrapper">
+            <canvas id="discountSensitivityChart"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- DATA EXPLORER TABLE -->
+      <div class="data-table-card" id="tableCard">
+        <div class="table-header">
+          <div>
+            <h3 class="table-title">Live Transactions Explorer</h3>
+            <p class="table-subtitle">Showing active sliced transactions with real-time client-side search</p>
+          </div>
+          <div class="table-search-box">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <input type="text" id="tableSearchInput" placeholder="Search order, customer, product...">
+          </div>
+        </div>
+
+        <div class="table-responsive">
+          <table class="data-table" id="salesTable">
+            <thead>
+              <tr>
+                <th>Order ID</th>
+                <th>Date</th>
+                <th>Customer</th>
+                <th>Segment</th>
+                <th>Region</th>
+                <th>Category</th>
+                <th>Product</th>
+                <th>Qty</th>
+                <th>Revenue</th>
+                <th>Profit</th>
+                <th>Margin</th>
+              </tr>
+            </thead>
+            <tbody id="salesTableBody">
+              <!-- Dynamically populated rows -->
+            </tbody>
+          </table>
+        </div>
+
+        <div class="table-pagination">
+          <span class="pagination-info" id="paginationInfo">Showing 1 to 15 of 3,500</span>
+          <div class="pagination-buttons">
+            <button id="prevPageBtn" class="btn btn-sm btn-secondary" disabled>
+              <i class="fa-solid fa-chevron-left"></i> Previous
+            </button>
+            <span class="current-page-badge" id="currentPageBadge">Page 1</span>
+            <button id="nextPageBtn" class="btn btn-sm btn-secondary">
+              Next <i class="fa-solid fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="dashboard-footer">
+      <div>
+        <strong>Data Analytics Internship</strong> • Week 01 Capstone Project
+      </div>
+      <div>
+        Designed for Executive Sales & Revenue Analytics • Built with Vanilla JS & Modern CSS
+      </div>
+    </footer>
+  </div>
+
+  <!-- LOAD TRANSACTIONS DATASET -->
+  <script src="sales_data.js"></script>
+  <!-- DASHBOARD APPLICATION SCRIPT -->
+  <script src="app.js"></script>
+</body>
+</html>
