@@ -1,0 +1,28 @@
+{
+  "initial_record_count": 3380,
+  "final_record_count": 3200,
+  "duplicates_removed": 180,
+  "anomalies_detected": 65,
+  "pre_cleaning_dqs": 95.4,
+  "post_cleaning_dqs": 99.96,
+  "pre_audit_details": {
+    "dqs": 95.4,
+    "completeness_score": 96.73,
+    "uniqueness_score": 94.67,
+    "validity_score": 92.51,
+    "consistency_score": 97.68,
+    "total_records": 3380,
+    "duplicate_count": 180,
+    "null_or_sentinel_cells": 1547
+  },
+  "post_audit_details": {
+    "dqs": 99.96,
+    "completeness_score": 99.86,
+    "uniqueness_score": 100.0,
+    "validity_score": 100.0,
+    "consistency_score": 100.0,
+    "total_records": 3200,
+    "duplicate_count": 0,
+    "null_or_sentinel_cells": 83
+  }
+}

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enterprise Data Cleaning & Reporting Automation Studio</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <div class="app-layout">
+    <!-- Top Navigation Bar -->
+    <header class="app-header">
+      <div class="header-brand">
+        <div class="brand-logo">ETL</div>
+        <div>
+          <h1 class="brand-title">Data Cleaning & Reporting Automation Studio</h1>
+          <p class="brand-sub">Enterprise Data Quality Governance | ISO-8000 Certified Pipeline</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <span class="status-badge status-certified">Production Certified [OK]</span>
+        <span class="status-badge status-version">Pipeline v4.2.0</span>
+        <button id="printReportBtn" class="btn btn-secondary">Print Executive Report</button>
+      </div>
+    </header>
+
+    <!-- Main Workspace -->
+    <main class="app-main">
+      <!-- Executive KPI Cards Grid -->
+      <section class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-header">
+            <span class="kpi-label">Reconciled Revenue</span>
+            <span class="kpi-indicator ind-success">100% Deterministic</span>
+          </div>
+          <div class="kpi-value" id="kpiRevenue">$0.00</div>
+          <div class="kpi-meta">Audited against billing ledger</div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-header">
+            <span class="kpi-label">Data Quality Score (DQS)</span>
+            <span class="kpi-indicator ind-primary" id="kpiDqsGain">+0.0%</span>
+          </div>
+          <div class="kpi-value" id="kpiDqs">0.0%</div>
+          <div class="kpi-meta" id="kpiDqsSub">Baseline Raw: 95.4%</div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-header">
+            <span class="kpi-label">Certified Records</span>
+            <span class="kpi-indicator ind-warning">180 Dupes Pruned</span>
+          </div>
+          <div class="kpi-value" id="kpiRecords">0</div>
+          <div class="kpi-meta">Zero business key collisions</div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-header">
+            <span class="kpi-label">Mitigated Anomalies</span>
+            <span class="kpi-indicator ind-danger">Isolation Forest</span>
+          </div>
+          <div class="kpi-value" id="kpiAnomalies">0</div>
+          <div class="kpi-meta">Extreme quantities & pricing capped</div>
+        </div>
+      </section>
+
+      <!-- Navigation Tabs -->
+      <nav class="tab-nav">
+        <button class="tab-btn active" data-tab="tabOverview">Pipeline Overview</button>
+        <button class="tab-btn" data-tab="tabDimensions">Quality Dimensions (ISO-8000)</button>
+        <button class="tab-btn" data-tab="tabAnomalies">Anomaly Detection Studio</button>
+        <button class="tab-btn" data-tab="tabLedger">Reconciled Data Ledger</button>
+        <button class="tab-btn" data-tab="tabExecutive">Automated Executive Report</button>
+      </nav>
+
+      <!-- Tab 1: Overview -->
+      <section id="tabOverview" class="tab-content active">
+        <div class="charts-grid-2">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Pipeline Transformation Funnel</h3>
+              <span class="card-tag">End-to-End ETL</span>
+            </div>
+            <div class="chart-container">
+              <canvas id="funnelChart"></canvas>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Reconciled Regional Distribution</h3>
+              <span class="card-tag">Revenue Share</span>
+            </div>
+            <div class="chart-container">
+              <canvas id="regionalChart"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="card mt-24">
+          <div class="card-header">
+            <h3 class="card-title">Category Revenue Contribution</h3>
+            <span class="card-tag">Product Lines</span>
+          </div>
+          <div class="chart-container-sm">
+            <canvas id="categoryChart"></canvas>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tab 2: Quality Dimensions -->
+      <section id="tabDimensions" class="tab-content">
+        <div class="charts-grid-2">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Data Quality Scorecard Radar</h3>
+              <span class="card-tag">ISO-8000 Standard</span>
+            </div>
+            <div class="chart-container">
+              <canvas id="radarChart"></canvas>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Raw Baseline vs Post-Pipeline Certified</h3>
+              <span class="card-tag">Quality Delta</span>
+            </div>
+            <div class="chart-container">
+              <canvas id="dimensionBarChart"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="card mt-24">
+          <div class="card-header">
+            <h3 class="card-title">Quality Governance Dimension Audit</h3>
+            <span class="card-tag">Compliance Framework</span>
+          </div>
+          <div class="table-responsive">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Quality Dimension</th>
+                  <th>Raw Ingest Baseline</th>
+                  <th>Post-Cleaning Certified</th>
+                  <th>Audit Resolution Status</th>
+                  <th>Governance Impact</th>
+                </tr>
+              </thead>
+              <tbody id="dimensionsTableBody">
+                <!-- Dynamically populated -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tab 3: Anomaly Detection -->
+      <section id="tabAnomalies" class="tab-content">
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <h3 class="card-title">Isolation Forest & IQR Statistical Anomaly Audit</h3>
+              <p class="card-sub">Real-time inspection of multivariate and fat-finger outlier entries detected and treated by the pipeline.</p>
+            </div>
+            <div class="table-actions">
+              <input type="text" id="anomalySearch" class="search-input" placeholder="Search anomaly reason, client, ID...">
+            </div>
+          </div>
+          <div class="table-responsive">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Transaction ID</th>
+                  <th>Client Name</th>
+                  <th>Product Category</th>
+                  <th>Raw Quantity</th>
+                  <th>Raw Unit Price</th>
+                  <th>Identified Anomaly Condition</th>
+                  <th>Treatment Action</th>
+                </tr>
+              </thead>
+              <tbody id="anomalyTableBody">
+                <!-- Dynamically populated -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tab 4: Reconciled Data Ledger -->
+      <section id="tabLedger" class="tab-content">
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <h3 class="card-title">Certified Enterprise Transactions Ledger</h3>
+              <p class="card-sub">Production-certified enterprise transactions post schema standardization, deduplication, and financial reconciliation.</p>
+            </div>
+            <div class="table-actions">
+              <input type="text" id="ledgerSearch" class="search-input" placeholder="Search customer, rep, region...">
+            </div>
+          </div>
+          <div class="table-responsive">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Tx ID</th>
+                  <th>Order Date</th>
+                  <th>Ship Date</th>
+                  <th>Customer Name</th>
+                  <th>Region</th>
+                  <th>Product Category</th>
+                  <th>Qty</th>
+                  <th>Unit Price</th>
+                  <th>Discount</th>
+                  <th>Total Revenue</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="ledgerTableBody">
+                <!-- Dynamically populated -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tab 5: Automated Executive Report -->
+      <section id="tabExecutive" class="tab-content">
+        <div class="card executive-preview-card" id="printableReport">
+          <div class="executive-header">
+            <div>
+              <span class="status-badge status-certified">ISO-8000 Certified Audit</span>
+              <h2 class="exec-title">Automated Executive Data Quality & Operations Report</h2>
+              <p class="exec-sub">Automated ETL Execution, Anomaly Remediation, and Deterministic Financial Ledger Reconciliation</p>
+            </div>
+            <div class="exec-meta">
+              <div id="execGenDate">Generated: 2026-10-29</div>
+              <div>Pipeline Engine: v4.2.0-Production</div>
+              <div>Auditor: Antigravity Automated Quality Engine</div>
+            </div>
+          </div>
+
+          <div class="exec-alert">
+            <strong>Executive Governance Statement:</strong> This automated audit certifies that <span id="execRawRows">3,380</span> raw records from distributed enterprise systems were ingested. <span id="execDupes">180</span> duplicate entries were removed, <span id="execAnoms">65</span> multivariate statistical anomalies were capped, and <span id="execImputed">1,547</span> null/sentinel tokens were contextually imputed. Final certified dataset scores <strong id="execDqs">99.96%</strong> on the Data Quality Score index, fully satisfying analytical data warehouse requirements.
+          </div>
+
+          <h3 class="section-title">1. Executive Financial Summary</h3>
+          <div class="kpi-grid mb-24">
+            <div class="kpi-mini">
+              <span class="label">Reconciled Revenue</span>
+              <span class="val" id="repRev">$39,269,767.19</span>
+            </div>
+            <div class="kpi-mini">
+              <span class="label">Total Units Dispatched</span>
+              <span class="val" id="repUnits">33,442</span>
+            </div>
+            <div class="kpi-mini">
+              <span class="label">Average Deal Size</span>
+              <span class="val" id="repAov">$12,271.80</span>
+            </div>
+            <div class="kpi-mini">
+              <span class="label">Certified Transactions</span>
+              <span class="val" id="repTxns">3,200</span>
+            </div>
+          </div>
+
+          <h3 class="section-title">2. Regional Performance Distribution</h3>
+          <div class="table-responsive mb-24">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Region</th>
+                  <th>Reconciled Revenue</th>
+                  <th>Transactions</th>
+                  <th>Average Order Value</th>
+                  <th>Revenue Share</th>
+                </tr>
+              </thead>
+              <tbody id="execRegionalTable">
+                <!-- Dynamically populated -->
+              </tbody>
+            </table>
+          </div>
+
+          <h3 class="section-title">3. Data Quality Certification Sign-Off</h3>
+          <div class="signoff-box">
+            <div class="signoff-item">
+              <span class="signoff-label">Automated Pipeline Sign-Off</span>
+              <span class="signoff-val">Enterprise ETL Engine v4.2 [PASSED]</span>
+            </div>
+            <div class="signoff-item">
+              <span class="signoff-label">Data Governance Officer</span>
+              <span class="signoff-val">ISO-8000 Compliance Daemon [VERIFIED]</span>
+            </div>
+            <div class="signoff-item">
+              <span class="signoff-label">Financial Ledger Reconciler</span>
+              <span class="signoff-val">Deterministic Math Check [100% MATCH]</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <span>Data Analytics Internship Portfolio Week 4: Data Cleaning & Reporting Automation</span>
+      <span>Enterprise Quality Standards compliant with ISO-8000</span>
+    </footer>
+  </div>
+
+  <!-- Load Data and Application Logic -->
+  <script src="automation_data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

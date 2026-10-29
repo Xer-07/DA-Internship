@@ -1,0 +1,66 @@
+Transaction_ID,Customer_Name,Product_Category,Original_Quantity,Original_Unit_Price,Anomaly_Reason
+TXN-20241187,Vanguard Financial,Cloud Infrastructure,7,125000.0,"Excessive Unit Price ($125,000.00) | Multivariate Isolation Forest Anomaly"
+TXN-20240239,Ironclad Security,Cybersecurity Suite,928,810.02,Extreme Quantity (928)
+TXN-20241381,Apex Global Solutions,DevOps Automation,8,98000.0,"Excessive Unit Price ($98,000.00) | Multivariate Isolation Forest Anomaly"
+TXN-20242764,Omnicorp International,Business Intelligence,2338,565.29,Extreme Quantity (2338) | Multivariate Isolation Forest Anomaly
+TXN-20242968,Cybershield Security,DevOps Automation,1042,987.74,Extreme Quantity (1042)
+TXN-20243194,Enterprise Partner Client,Enterprise Hardware,716,3380.92,Extreme Quantity (716)
+TXN-20242852,Nexus Technologies,Business Intelligence,17,62000.0,"Excessive Unit Price ($62,000.00) | Multivariate Isolation Forest Anomaly"
+TXN-20240174,Starlight Media,Cloud Infrastructure,2,125000.0,"Excessive Unit Price ($125,000.00) | Multivariate Isolation Forest Anomaly"
+TXN-20241653,Quantum Dynamics,Managed Services,4,45000.0,"Excessive Unit Price ($45,000.00)"
+TXN-20242603,Summit Cloud Systems,Enterprise Hardware,2065,3654.95,Extreme Quantity (2065) | Multivariate Isolation Forest Anomaly
+TXN-20240602,Zenith Biotech,Cloud Infrastructure,2002,1289.24,Extreme Quantity (2002) | Multivariate Isolation Forest Anomaly
+TXN-20242575,Apex Global Solutions,Business Intelligence,15,62000.0,"Excessive Unit Price ($62,000.00) | Multivariate Isolation Forest Anomaly"
+TXN-20240332,Zenith Biotech,Cloud Infrastructure,2,125000.0,"Excessive Unit Price ($125,000.00) | Multivariate Isolation Forest Anomaly"
+TXN-20241432,Aura Retail Group,DevOps Automation,18,98000.0,"Excessive Unit Price ($98,000.00) | Multivariate Isolation Forest Anomaly"
+TXN-20243087,Nexus Technologies,Managed Services,1833,424.35,Extreme Quantity (1833) | Multivariate Isolation Forest Anomaly
+TXN-20240233,?,Business Intelligence,10,62000.0,"Excessive Unit Price ($62,000.00) | Multivariate Isolation Forest Anomaly"
+TXN-20241283,Echo Systems,Business Intelligence,1174,669.76,Extreme Quantity (1174)
+TXN-20242699,Enterprise Partner Client,Business Intelligence,3,62000.0,"Excessive Unit Price ($62,000.00) | Multivariate Isolation Forest Anomaly"
+TXN-20241292,Velocity Software,Enterprise Hardware,1001,3818.62,Extreme Quantity (1001) | Multivariate Isolation Forest Anomaly
+TXN-20242342,Nexus Technologies,Business Intelligence,19,62000.0,"Excessive Unit Price ($62,000.00) | Multivariate Isolation Forest Anomaly"
+TXN-20242073,Vanguard Financial,Enterprise Hardware,1617,3504.28,Extreme Quantity (1617) | Multivariate Isolation Forest Anomaly
+TXN-20240783,Ironclad Security,DevOps Automation,16,98000.0,"Excessive Unit Price ($98,000.00) | Multivariate Isolation Forest Anomaly"
+TXN-20243199,Nexus Technologies,Managed Services,14,45000.0,"Excessive Unit Price ($45,000.00)"
+TXN-20241295,Omnicorp International,Managed Services,1484,414.25,Extreme Quantity (1484) | Multivariate Isolation Forest Anomaly
+TXN-20241099,Pinnacle Health,DevOps Automation,14,98000.0,"Excessive Unit Price ($98,000.00) | Multivariate Isolation Forest Anomaly"
+TXN-20242477,Bluewave Analytics,Cybersecurity Suite,1224,779.11,Extreme Quantity (1224)
+TXN-20240360,Nexus Technologies,DevOps Automation,2111,1085.27,Extreme Quantity (2111) | Multivariate Isolation Forest Anomaly
+TXN-20241694,Enterprise Partner Client,Cloud Infrastructure,2095,1324.49,Extreme Quantity (2095) | Multivariate Isolation Forest Anomaly
+TXN-20242776,Horizon Logistics,DevOps Automation,19,98000.0,"Excessive Unit Price ($98,000.00) | Multivariate Isolation Forest Anomaly"
+TXN-20242653,Acme Corporation,DevOps Automation,18,98000.0,"Excessive Unit Price ($98,000.00) | Multivariate Isolation Forest Anomaly"
+TXN-20242212,Bluewave Analytics,Enterprise Hardware,824,3564.59,Extreme Quantity (824)
+TXN-20242473,Enterprise Partner Client,Managed Services,1884,406.64,Extreme Quantity (1884) | Multivariate Isolation Forest Anomaly
+TXN-20241530,Vanguard Financial,Business Intelligence,9,62000.0,"Excessive Unit Price ($62,000.00) | Multivariate Isolation Forest Anomaly"
+TXN-20241910,Omnicorp International,Business Intelligence,11,62000.0,"Excessive Unit Price ($62,000.00) | Multivariate Isolation Forest Anomaly"
+TXN-20242498,Solaris Energy,Business Intelligence,1581,662.77,Extreme Quantity (1581)
+TXN-20241380,Summit Cloud Systems,Enterprise Hardware,2392,3897.18,Extreme Quantity (2392) | Multivariate Isolation Forest Anomaly
+TXN-20242857,Bluewave Analytics,Cloud Infrastructure,19,125000.0,"Excessive Unit Price ($125,000.00) | Multivariate Isolation Forest Anomaly"
+TXN-20240771,Nexus Technologies,Enterprise Hardware,2065,340000.0,"Extreme Quantity (2065) | Excessive Unit Price ($340,000.00) | Multivariate Isolation Forest Anomaly"
+TXN-20242218,Horizon Logistics,DevOps Automation,11,98000.0,"Excessive Unit Price ($98,000.00) | Multivariate Isolation Forest Anomaly"
+TXN-20240963,Pinnacle Health,Business Intelligence,2482,643.68,Extreme Quantity (2482) | Multivariate Isolation Forest Anomaly
+TXN-20240431,Nexus Technologies,Business Intelligence,12,62000.0,"Excessive Unit Price ($62,000.00)"
+TXN-20240614,Pinnacle Health,Cybersecurity Suite,1753,858.28,Extreme Quantity (1753) | Multivariate Isolation Forest Anomaly
+TXN-20240726,Enterprise Partner Client,Cybersecurity Suite,9,85000.0,"Excessive Unit Price ($85,000.00) | Multivariate Isolation Forest Anomaly"
+TXN-20240107,Horizon Logistics,DevOps Automation,1589,884.9,Extreme Quantity (1589)
+TXN-20242902,Cybershield Security,Managed Services,7,45000.0,"Excessive Unit Price ($45,000.00)"
+TXN-20240181,Nexus Technologies,Managed Services,16,45000.0,"Excessive Unit Price ($45,000.00)"
+TXN-20241201,Summit Cloud Systems,Cloud Infrastructure,20,125000.0,"Excessive Unit Price ($125,000.00) | Multivariate Isolation Forest Anomaly"
+TXN-20240285,Enterprise Partner Client,DevOps Automation,14,98000.0,"Excessive Unit Price ($98,000.00) | Multivariate Isolation Forest Anomaly"
+TXN-20241372,Cybershield Security,Business Intelligence,1075,705.34,Extreme Quantity (1075)
+TXN-20241319,Horizon Logistics,Cloud Infrastructure,13,125000.0,"Excessive Unit Price ($125,000.00) | Multivariate Isolation Forest Anomaly"
+TXN-20241526,Omnicorp International,Business Intelligence,1293,700.91,Extreme Quantity (1293) | Multivariate Isolation Forest Anomaly
+TXN-20241753,Vanguard Financial,DevOps Automation,13,98000.0,"Excessive Unit Price ($98,000.00) | Multivariate Isolation Forest Anomaly"
+TXN-20242142,Apex Global Solutions,Cybersecurity Suite,20,85000.0,"Excessive Unit Price ($85,000.00) | Multivariate Isolation Forest Anomaly"
+TXN-20242845,Summit Cloud Systems,Cybersecurity Suite,13,85000.0,"Excessive Unit Price ($85,000.00) | Multivariate Isolation Forest Anomaly"
+TXN-20240977,Acme Corporation,Cybersecurity Suite,3,85000.0,"Excessive Unit Price ($85,000.00) | Multivariate Isolation Forest Anomaly"
+TXN-20240895,Horizon Logistics,DevOps Automation,845,920.78,Extreme Quantity (845)
+TXN-20242491,Omnicorp International,DevOps Automation,7,98000.0,"Excessive Unit Price ($98,000.00) | Multivariate Isolation Forest Anomaly"
+TXN-20241158,Pinnacle Health,Enterprise Hardware,1074,3674.45,Extreme Quantity (1074) | Multivariate Isolation Forest Anomaly
+TXN-20241300,Aura Retail Group,Enterprise Hardware,2087,3554.76,Extreme Quantity (2087) | Multivariate Isolation Forest Anomaly
+TXN-20241843,Omnicorp International,Enterprise Hardware,3,340000.0,"Excessive Unit Price ($340,000.00) | Multivariate Isolation Forest Anomaly"
+TXN-20241306,Cybershield Security,Enterprise Hardware,1940,3887.38,Extreme Quantity (1940) | Multivariate Isolation Forest Anomaly
+TXN-20241051,Starlight Media,Managed Services,8,45000.0,"Excessive Unit Price ($45,000.00)"
+TXN-20242625,Ironclad Security,Business Intelligence,20,62000.0,"Excessive Unit Price ($62,000.00) | Multivariate Isolation Forest Anomaly"
+TXN-20240241,Vanguard Financial,Business Intelligence,1006,605.26,Extreme Quantity (1006)
+TXN-20242324,Summit Cloud Systems,Cybersecurity Suite,11,85000.0,"Excessive Unit Price ($85,000.00) | Multivariate Isolation Forest Anomaly"

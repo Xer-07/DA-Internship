@@ -1,0 +1,730 @@
+{
+  "metadata": {
+    "generated_at": "2026-10-29 22:13:15",
+    "pipeline_version": "v4.2.0-Production",
+    "audit_standard": "ISO-8000 Data Quality Specification"
+  },
+  "executive_kpis": {
+    "total_revenue": 39269767.19,
+    "total_units_sold": 33442,
+    "average_order_value": 12271.8,
+    "total_transactions": 3200,
+    "unique_enterprise_accounts": 20,
+    "pre_cleaning_dqs": 95.4,
+    "post_cleaning_dqs": 99.96,
+    "dqs_gain_pct": 4.56
+  },
+  "audit_scores": {
+    "pre": {
+      "dqs": 95.4,
+      "completeness_score": 96.73,
+      "uniqueness_score": 94.67,
+      "validity_score": 92.51,
+      "consistency_score": 97.68,
+      "total_records": 3380,
+      "duplicate_count": 180,
+      "null_or_sentinel_cells": 1547
+    },
+    "post": {
+      "dqs": 99.96,
+      "completeness_score": 99.86,
+      "uniqueness_score": 100.0,
+      "validity_score": 100.0,
+      "consistency_score": 100.0,
+      "total_records": 3200,
+      "duplicate_count": 0,
+      "null_or_sentinel_cells": 83
+    }
+  },
+  "pipeline_funnel": [
+    {
+      "stage": "Raw Ingested Records",
+      "count": 3380,
+      "status": "Ingested"
+    },
+    {
+      "stage": "Duplicate Records Pruned",
+      "count": 180,
+      "status": "Resolved"
+    },
+    {
+      "stage": "Chronology Discrepancies Corrected",
+      "count": 68,
+      "status": "Standardized"
+    },
+    {
+      "stage": "Currency / Type Normalizations",
+      "count": 482,
+      "status": "Converted"
+    },
+    {
+      "stage": "Contextual Imputations",
+      "count": 1547,
+      "status": "Imputed"
+    },
+    {
+      "stage": "Statistical Anomalies Treated",
+      "count": 65,
+      "status": "Mitigated"
+    },
+    {
+      "stage": "Certified Production Records",
+      "count": 3200,
+      "status": "100% Production Ready"
+    }
+  ],
+  "regional_breakdown": [
+    {
+      "region": "-999",
+      "revenue": 123893.68,
+      "transactions": 13,
+      "aov": 9530.28,
+      "share_pct": 0.32
+    },
+    {
+      "region": "?",
+      "revenue": 172267.42,
+      "transactions": 19,
+      "aov": 9066.71,
+      "share_pct": 0.44
+    },
+    {
+      "region": "APAC",
+      "revenue": 9157852.17,
+      "transactions": 741,
+      "aov": 12358.77,
+      "share_pct": 23.32
+    },
+    {
+      "region": "EMEA",
+      "revenue": 9541498.58,
+      "transactions": 791,
+      "aov": 12062.58,
+      "share_pct": 24.3
+    },
+    {
+      "region": "Latin America",
+      "revenue": 9810190.11,
+      "transactions": 805,
+      "aov": 12186.57,
+      "share_pct": 24.98
+    },
+    {
+      "region": "North America",
+      "revenue": 10464065.23,
+      "transactions": 831,
+      "aov": 12592.14,
+      "share_pct": 26.65
+    }
+  ],
+  "category_breakdown": [
+    {
+      "category": "Business Intelligence",
+      "revenue": 2851107.12,
+      "units": 5050,
+      "avg_price": 635.72,
+      "share_pct": 7.26
+    },
+    {
+      "category": "Cloud Infrastructure",
+      "revenue": 6257189.57,
+      "units": 5436,
+      "avg_price": 1283.15,
+      "share_pct": 15.93
+    },
+    {
+      "category": "Cybersecurity Suite",
+      "revenue": 4331116.9,
+      "units": 5629,
+      "avg_price": 867.69,
+      "share_pct": 11.03
+    },
+    {
+      "category": "DevOps Automation",
+      "revenue": 5327966.08,
+      "units": 5919,
+      "avg_price": 1005.15,
+      "share_pct": 13.57
+    },
+    {
+      "category": "Enterprise Hardware",
+      "revenue": 18189838.66,
+      "units": 5810,
+      "avg_price": 3515.43,
+      "share_pct": 46.32
+    },
+    {
+      "category": "Managed Services",
+      "revenue": 2312548.86,
+      "units": 5598,
+      "avg_price": 463.44,
+      "share_pct": 5.89
+    }
+  ],
+  "sales_reps": [
+    {
+      "rep": "Marcus Vance",
+      "revenue": 9950678.52,
+      "deals": 808
+    },
+    {
+      "rep": "Laura Chen",
+      "revenue": 6004126.58,
+      "deals": 481
+    },
+    {
+      "rep": "David Kim",
+      "revenue": 5967525.85,
+      "deals": 484
+    },
+    {
+      "rep": "Sarah Jenkins",
+      "revenue": 5874783.69,
+      "deals": 470
+    },
+    {
+      "rep": "Michael Chang",
+      "revenue": 5834491.98,
+      "deals": 474
+    },
+    {
+      "rep": "Elena Rostova",
+      "revenue": 5382077.22,
+      "deals": 460
+    },
+    {
+      "rep": "?",
+      "revenue": 181858.51,
+      "deals": 14
+    },
+    {
+      "rep": "-999",
+      "revenue": 74224.84,
+      "deals": 9
+    }
+  ],
+  "sample_anomalies": [
+    {
+      "Transaction_ID": "TXN-20241187",
+      "Customer_Name": "Vanguard Financial",
+      "Product_Category": "Cloud Infrastructure",
+      "Original_Quantity": 7,
+      "Original_Unit_Price": 125000.0,
+      "Anomaly_Reason": "Excessive Unit Price ($125,000.00) | Multivariate Isolation Forest Anomaly"
+    },
+    {
+      "Transaction_ID": "TXN-20240239",
+      "Customer_Name": "Ironclad Security",
+      "Product_Category": "Cybersecurity Suite",
+      "Original_Quantity": 928,
+      "Original_Unit_Price": 810.02,
+      "Anomaly_Reason": "Extreme Quantity (928)"
+    },
+    {
+      "Transaction_ID": "TXN-20241381",
+      "Customer_Name": "Apex Global Solutions",
+      "Product_Category": "DevOps Automation",
+      "Original_Quantity": 8,
+      "Original_Unit_Price": 98000.0,
+      "Anomaly_Reason": "Excessive Unit Price ($98,000.00) | Multivariate Isolation Forest Anomaly"
+    },
+    {
+      "Transaction_ID": "TXN-20242764",
+      "Customer_Name": "Omnicorp International",
+      "Product_Category": "Business Intelligence",
+      "Original_Quantity": 2338,
+      "Original_Unit_Price": 565.29,
+      "Anomaly_Reason": "Extreme Quantity (2338) | Multivariate Isolation Forest Anomaly"
+    },
+    {
+      "Transaction_ID": "TXN-20242968",
+      "Customer_Name": "Cybershield Security",
+      "Product_Category": "DevOps Automation",
+      "Original_Quantity": 1042,
+      "Original_Unit_Price": 987.74,
+      "Anomaly_Reason": "Extreme Quantity (1042)"
+    },
+    {
+      "Transaction_ID": "TXN-20243194",
+      "Customer_Name": "Enterprise Partner Client",
+      "Product_Category": "Enterprise Hardware",
+      "Original_Quantity": 716,
+      "Original_Unit_Price": 3380.92,
+      "Anomaly_Reason": "Extreme Quantity (716)"
+    },
+    {
+      "Transaction_ID": "TXN-20242852",
+      "Customer_Name": "Nexus Technologies",
+      "Product_Category": "Business Intelligence",
+      "Original_Quantity": 17,
+      "Original_Unit_Price": 62000.0,
+      "Anomaly_Reason": "Excessive Unit Price ($62,000.00) | Multivariate Isolation Forest Anomaly"
+    },
+    {
+      "Transaction_ID": "TXN-20240174",
+      "Customer_Name": "Starlight Media",
+      "Product_Category": "Cloud Infrastructure",
+      "Original_Quantity": 2,
+      "Original_Unit_Price": 125000.0,
+      "Anomaly_Reason": "Excessive Unit Price ($125,000.00) | Multivariate Isolation Forest Anomaly"
+    },
+    {
+      "Transaction_ID": "TXN-20241653",
+      "Customer_Name": "Quantum Dynamics",
+      "Product_Category": "Managed Services",
+      "Original_Quantity": 4,
+      "Original_Unit_Price": 45000.0,
+      "Anomaly_Reason": "Excessive Unit Price ($45,000.00)"
+    },
+    {
+      "Transaction_ID": "TXN-20242603",
+      "Customer_Name": "Summit Cloud Systems",
+      "Product_Category": "Enterprise Hardware",
+      "Original_Quantity": 2065,
+      "Original_Unit_Price": 3654.95,
+      "Anomaly_Reason": "Extreme Quantity (2065) | Multivariate Isolation Forest Anomaly"
+    },
+    {
+      "Transaction_ID": "TXN-20240602",
+      "Customer_Name": "Zenith Biotech",
+      "Product_Category": "Cloud Infrastructure",
+      "Original_Quantity": 2002,
+      "Original_Unit_Price": 1289.24,
+      "Anomaly_Reason": "Extreme Quantity (2002) | Multivariate Isolation Forest Anomaly"
+    },
+    {
+      "Transaction_ID": "TXN-20242575",
+      "Customer_Name": "Apex Global Solutions",
+      "Product_Category": "Business Intelligence",
+      "Original_Quantity": 15,
+      "Original_Unit_Price": 62000.0,
+      "Anomaly_Reason": "Excessive Unit Price ($62,000.00) | Multivariate Isolation Forest Anomaly"
+    },
+    {
+      "Transaction_ID": "TXN-20240332",
+      "Customer_Name": "Zenith Biotech",
+      "Product_Category": "Cloud Infrastructure",
+      "Original_Quantity": 2,
+      "Original_Unit_Price": 125000.0,
+      "Anomaly_Reason": "Excessive Unit Price ($125,000.00) | Multivariate Isolation Forest Anomaly"
+    },
+    {
+      "Transaction_ID": "TXN-20241432",
+      "Customer_Name": "Aura Retail Group",
+      "Product_Category": "DevOps Automation",
+      "Original_Quantity": 18,
+      "Original_Unit_Price": 98000.0,
+      "Anomaly_Reason": "Excessive Unit Price ($98,000.00) | Multivariate Isolation Forest Anomaly"
+    },
+    {
+      "Transaction_ID": "TXN-20243087",
+      "Customer_Name": "Nexus Technologies",
+      "Product_Category": "Managed Services",
+      "Original_Quantity": 1833,
+      "Original_Unit_Price": 424.35,
+      "Anomaly_Reason": "Extreme Quantity (1833) | Multivariate Isolation Forest Anomaly"
+    }
+  ],
+  "sample_cleaned_records": [
+    {
+      "Transaction_ID": "TXN-20240402",
+      "Order_Date": "2025-05-27",
+      "Ship_Date": "2025-05-31",
+      "Customer_ID": "CUST-1015",
+      "Customer_Name": "Omnicorp International",
+      "Customer_Email": "omnicorp@enterprise-client.com",
+      "Region": "EMEA",
+      "Product_Category": "Cybersecurity Suite",
+      "Quantity": 13,
+      "Unit_Price": 844.29,
+      "Discount": 0.2,
+      "Total_Revenue": 8780.62,
+      "Payment_Status": "Paid",
+      "Sales_Representative": "Marcus Vance",
+      "Is_Anomaly": false,
+      "Anomaly_Reason": "Standard Record",
+      "Gross_Revenue": 10975.77,
+      "Discount_Amount": 2195.15
+    },
+    {
+      "Transaction_ID": "TXN-20240321",
+      "Order_Date": "2025-01-08",
+      "Ship_Date": "2025-01-11",
+      "Customer_ID": "CUST-1019",
+      "Customer_Name": "Ironclad Security",
+      "Customer_Email": "ironclad@ironcladsec.io",
+      "Region": "North America",
+      "Product_Category": "Enterprise Hardware",
+      "Quantity": 10,
+      "Unit_Price": 3408.72,
+      "Discount": 0.25,
+      "Total_Revenue": 25565.4,
+      "Payment_Status": "Authorized",
+      "Sales_Representative": "Elena Rostova",
+      "Is_Anomaly": false,
+      "Anomaly_Reason": "Standard Record",
+      "Gross_Revenue": 34087.2,
+      "Discount_Amount": 8521.8
+    },
+    {
+      "Transaction_ID": "TXN-20240457",
+      "Order_Date": "2024-02-08",
+      "Ship_Date": "2024-02-11",
+      "Customer_ID": "CUST-1016",
+      "Customer_Name": "Velocity Software",
+      "Customer_Email": "velocity@velocitysoft.io",
+      "Region": "Latin America",
+      "Product_Category": "Cybersecurity Suite",
+      "Quantity": 3,
+      "Unit_Price": 814.21,
+      "Discount": 0.05,
+      "Total_Revenue": 2320.5,
+      "Payment_Status": "Authorized",
+      "Sales_Representative": "Michael Chang",
+      "Is_Anomaly": false,
+      "Anomaly_Reason": "Standard Record",
+      "Gross_Revenue": 2442.63,
+      "Discount_Amount": 122.13
+    },
+    {
+      "Transaction_ID": "TXN-20240879",
+      "Order_Date": "2025-01-09",
+      "Ship_Date": "2025-01-15",
+      "Customer_ID": "CUST-1001",
+      "Customer_Name": "Nexus Technologies",
+      "Customer_Email": "nexus@nexustech.io",
+      "Region": "North America",
+      "Product_Category": "Managed Services",
+      "Quantity": 9,
+      "Unit_Price": 457.53,
+      "Discount": 0.2,
+      "Total_Revenue": 3294.22,
+      "Payment_Status": "Refunded",
+      "Sales_Representative": "Laura Chen",
+      "Is_Anomaly": false,
+      "Anomaly_Reason": "Standard Record",
+      "Gross_Revenue": 4117.77,
+      "Discount_Amount": 823.55
+    },
+    {
+      "Transaction_ID": "TXN-20240070",
+      "Order_Date": "2024-05-22",
+      "Ship_Date": "2024-05-27",
+      "Customer_ID": "CUST-1004",
+      "Customer_Name": "Quantum Dynamics",
+      "Customer_Email": "quantum@quantumdyn.net",
+      "Region": "Latin America",
+      "Product_Category": "Cloud Infrastructure",
+      "Quantity": 1,
+      "Unit_Price": 1192.39,
+      "Discount": 0.2,
+      "Total_Revenue": 953.91,
+      "Payment_Status": "Authorized",
+      "Sales_Representative": "Sarah Jenkins",
+      "Is_Anomaly": false,
+      "Anomaly_Reason": "Standard Record",
+      "Gross_Revenue": 1192.39,
+      "Discount_Amount": 238.48
+    },
+    {
+      "Transaction_ID": "TXN-20240051",
+      "Order_Date": "2024-12-07",
+      "Ship_Date": "2024-12-10",
+      "Customer_ID": "CUST-1006",
+      "Customer_Name": "Horizon Logistics",
+      "Customer_Email": "horizon@horizonlogistics.com",
+      "Region": "North America",
+      "Product_Category": "Managed Services",
+      "Quantity": 18,
+      "Unit_Price": 429.29,
+      "Discount": 0.05,
+      "Total_Revenue": 7340.86,
+      "Payment_Status": "Authorized",
+      "Sales_Representative": "Michael Chang",
+      "Is_Anomaly": false,
+      "Anomaly_Reason": "Standard Record",
+      "Gross_Revenue": 7727.22,
+      "Discount_Amount": 386.36
+    },
+    {
+      "Transaction_ID": "TXN-20241272",
+      "Order_Date": "2024-11-14",
+      "Ship_Date": "2024-11-20",
+      "Customer_ID": "CUST-1005",
+      "Customer_Name": "Starlight Media",
+      "Customer_Email": "starlight@starlightmedia.com",
+      "Region": "North America",
+      "Product_Category": "Cybersecurity Suite",
+      "Quantity": 2,
+      "Unit_Price": 975.96,
+      "Discount": 0.0,
+      "Total_Revenue": 1951.92,
+      "Payment_Status": "Authorized",
+      "Sales_Representative": "Marcus Vance",
+      "Is_Anomaly": false,
+      "Anomaly_Reason": "Standard Record",
+      "Gross_Revenue": 1951.92,
+      "Discount_Amount": 0.0
+    },
+    {
+      "Transaction_ID": "TXN-20241780",
+      "Order_Date": "2025-11-18",
+      "Ship_Date": "2025-11-21",
+      "Customer_ID": "CUST-1004",
+      "Customer_Name": "Quantum Dynamics",
+      "Customer_Email": "quantum@quantumdyn.net",
+      "Region": "North America",
+      "Product_Category": "Enterprise Hardware",
+      "Quantity": 13,
+      "Unit_Price": 3453.29,
+      "Discount": 0.25,
+      "Total_Revenue": 33669.58,
+      "Payment_Status": "Pending",
+      "Sales_Representative": "Sarah Jenkins",
+      "Is_Anomaly": false,
+      "Anomaly_Reason": "Standard Record",
+      "Gross_Revenue": 44892.77,
+      "Discount_Amount": 11223.19
+    },
+    {
+      "Transaction_ID": "TXN-20240787",
+      "Order_Date": "2025-10-14",
+      "Ship_Date": "2025-10-21",
+      "Customer_ID": "CUST-1015",
+      "Customer_Name": "Omnicorp International",
+      "Customer_Email": "omnicorp@omnicorp.com",
+      "Region": "EMEA",
+      "Product_Category": "Cybersecurity Suite",
+      "Quantity": 5,
+      "Unit_Price": 792.57,
+      "Discount": 0.25,
+      "Total_Revenue": 2972.14,
+      "Payment_Status": "Pending",
+      "Sales_Representative": "Sarah Jenkins",
+      "Is_Anomaly": false,
+      "Anomaly_Reason": "Standard Record",
+      "Gross_Revenue": 3962.85,
+      "Discount_Amount": 990.71
+    },
+    {
+      "Transaction_ID": "TXN-20241812",
+      "Order_Date": "2025-12-14",
+      "Ship_Date": "2025-12-20",
+      "Customer_ID": "CUST-1000",
+      "Customer_Name": "Acme Corporation",
+      "Customer_Email": "acme@acme.com",
+      "Region": "APAC",
+      "Product_Category": "Enterprise Hardware",
+      "Quantity": 10,
+      "Unit_Price": 3525.59,
+      "Discount": 0.15,
+      "Total_Revenue": 29967.52,
+      "Payment_Status": "Pending",
+      "Sales_Representative": "David Kim",
+      "Is_Anomaly": false,
+      "Anomaly_Reason": "Standard Record",
+      "Gross_Revenue": 35255.9,
+      "Discount_Amount": 5288.38
+    },
+    {
+      "Transaction_ID": "TXN-20241593",
+      "Order_Date": "2024-03-09",
+      "Ship_Date": "2024-03-11",
+      "Customer_ID": "CUST-1002",
+      "Customer_Name": "Apex Global Solutions",
+      "Customer_Email": "apex@apexsolutions.com",
+      "Region": "North America",
+      "Product_Category": "DevOps Automation",
+      "Quantity": 5,
+      "Unit_Price": 981.52,
+      "Discount": 0.0,
+      "Total_Revenue": 4907.6,
+      "Payment_Status": "Refunded",
+      "Sales_Representative": "David Kim",
+      "Is_Anomaly": false,
+      "Anomaly_Reason": "Standard Record",
+      "Gross_Revenue": 4907.6,
+      "Discount_Amount": 0.0
+    },
+    {
+      "Transaction_ID": "TXN-20241978",
+      "Order_Date": "2025-01-05",
+      "Ship_Date": "2025-01-11",
+      "Customer_ID": "CUST-1015",
+      "Customer_Name": "Omnicorp International",
+      "Customer_Email": "omnicorp@omnicorp.com",
+      "Region": "APAC",
+      "Product_Category": "Managed Services",
+      "Quantity": 17,
+      "Unit_Price": 414.88,
+      "Discount": 0.1,
+      "Total_Revenue": 6347.66,
+      "Payment_Status": "Paid",
+      "Sales_Representative": "Laura Chen",
+      "Is_Anomaly": false,
+      "Anomaly_Reason": "Standard Record",
+      "Gross_Revenue": 7052.96,
+      "Discount_Amount": 705.3
+    },
+    {
+      "Transaction_ID": "TXN-20241187",
+      "Order_Date": "2024-05-11",
+      "Ship_Date": "2024-05-16",
+      "Customer_ID": "CUST-1003",
+      "Customer_Name": "Vanguard Financial",
+      "Customer_Email": "vanguard@vanguardfin.org",
+      "Region": "APAC",
+      "Product_Category": "Cloud Infrastructure",
+      "Quantity": 7,
+      "Unit_Price": 1600.0,
+      "Discount": 0.15,
+      "Total_Revenue": 9520.0,
+      "Payment_Status": "Paid",
+      "Sales_Representative": "Elena Rostova",
+      "Is_Anomaly": true,
+      "Anomaly_Reason": "Excessive Unit Price ($125,000.00) | Multivariate Isolation Forest Anomaly",
+      "Gross_Revenue": 11200.0,
+      "Discount_Amount": 1680.0
+    },
+    {
+      "Transaction_ID": "TXN-20241235",
+      "Order_Date": "2025-05-03",
+      "Ship_Date": "2025-05-09",
+      "Customer_ID": "CUST-1014",
+      "Customer_Name": "Bluewave Analytics",
+      "Customer_Email": "bluewave@bluewave.ai",
+      "Region": "APAC",
+      "Product_Category": "DevOps Automation",
+      "Quantity": 2,
+      "Unit_Price": 1109.82,
+      "Discount": 0.0,
+      "Total_Revenue": 2219.64,
+      "Payment_Status": "Authorized",
+      "Sales_Representative": "Elena Rostova",
+      "Is_Anomaly": false,
+      "Anomaly_Reason": "Standard Record",
+      "Gross_Revenue": 2219.64,
+      "Discount_Amount": 0.0
+    },
+    {
+      "Transaction_ID": "TXN-20243044",
+      "Order_Date": "2025-10-09",
+      "Ship_Date": "2025-10-11",
+      "Customer_ID": "CUST-1018",
+      "Customer_Name": "Echo Systems",
+      "Customer_Email": "echo@echosystems.com",
+      "Region": "North America",
+      "Product_Category": "Managed Services",
+      "Quantity": 8,
+      "Unit_Price": 418.44,
+      "Discount": 0.05,
+      "Total_Revenue": 3180.14,
+      "Payment_Status": "Pending",
+      "Sales_Representative": "Michael Chang",
+      "Is_Anomaly": false,
+      "Anomaly_Reason": "Standard Record",
+      "Gross_Revenue": 3347.52,
+      "Discount_Amount": 167.38
+    },
+    {
+      "Transaction_ID": "TXN-20242312",
+      "Order_Date": "2024-08-29",
+      "Ship_Date": "2024-09-04",
+      "Customer_ID": "CUST-1000",
+      "Customer_Name": "Acme Corporation",
+      "Customer_Email": "acme@acme.com",
+      "Region": "North America",
+      "Product_Category": "DevOps Automation",
+      "Quantity": 19,
+      "Unit_Price": 1104.91,
+      "Discount": 0.0,
+      "Total_Revenue": 20993.29,
+      "Payment_Status": "Refunded",
+      "Sales_Representative": "Elena Rostova",
+      "Is_Anomaly": false,
+      "Anomaly_Reason": "Standard Record",
+      "Gross_Revenue": 20993.29,
+      "Discount_Amount": 0.0
+    },
+    {
+      "Transaction_ID": "TXN-20241442",
+      "Order_Date": "2024-06-20",
+      "Ship_Date": "2024-06-23",
+      "Customer_ID": "CUST-1007",
+      "Customer_Name": "Pinnacle Health",
+      "Customer_Email": "pinnacle@pinnaclehealth.org",
+      "Region": "Latin America",
+      "Product_Category": "Managed Services",
+      "Quantity": 14,
+      "Unit_Price": 463.83,
+      "Discount": 0.0,
+      "Total_Revenue": 6493.62,
+      "Payment_Status": "Refunded",
+      "Sales_Representative": "Michael Chang",
+      "Is_Anomaly": false,
+      "Anomaly_Reason": "Standard Record",
+      "Gross_Revenue": 6493.62,
+      "Discount_Amount": 0.0
+    },
+    {
+      "Transaction_ID": "TXN-20241742",
+      "Order_Date": "2025-08-03",
+      "Ship_Date": "2025-08-06",
+      "Customer_ID": "CUST-1004",
+      "Customer_Name": "Quantum Dynamics",
+      "Customer_Email": "quantum@quantumdyn.net",
+      "Region": "Latin America",
+      "Product_Category": "Enterprise Hardware",
+      "Quantity": 4,
+      "Unit_Price": 3312.41,
+      "Discount": 0.05,
+      "Total_Revenue": 12587.16,
+      "Payment_Status": "Refunded",
+      "Sales_Representative": "Marcus Vance",
+      "Is_Anomaly": false,
+      "Anomaly_Reason": "Standard Record",
+      "Gross_Revenue": 13249.64,
+      "Discount_Amount": 662.48
+    },
+    {
+      "Transaction_ID": "TXN-20240184",
+      "Order_Date": "2024-02-24",
+      "Ship_Date": "2024-02-27",
+      "Customer_ID": "CUST-1013",
+      "Customer_Name": "Titan Manufacturing",
+      "Customer_Email": "titan@titanmfg.com",
+      "Region": "North America",
+      "Product_Category": "Cloud Infrastructure",
+      "Quantity": 10,
+      "Unit_Price": 1170.76,
+      "Discount": 0.05,
+      "Total_Revenue": 11122.22,
+      "Payment_Status": "Pending",
+      "Sales_Representative": "Laura Chen",
+      "Is_Anomaly": false,
+      "Anomaly_Reason": "Standard Record",
+      "Gross_Revenue": 11707.6,
+      "Discount_Amount": 585.38
+    },
+    {
+      "Transaction_ID": "TXN-20241798",
+      "Order_Date": "2024-06-06",
+      "Ship_Date": "2024-06-09",
+      "Customer_ID": "CUST-1000",
+      "Customer_Name": "Acme Corporation",
+      "Customer_Email": "acme@acme.com",
+      "Region": "EMEA",
+      "Product_Category": "Cybersecurity Suite",
+      "Quantity": 19,
+      "Unit_Price": 766.01,
+      "Discount": 0.1,
+      "Total_Revenue": 13098.77,
+      "Payment_Status": "Pending",
+      "Sales_Representative": "Laura Chen",
+      "Is_Anomaly": false,
+      "Anomaly_Reason": "Standard Record",
+      "Gross_Revenue": 14554.19,
+      "Discount_Amount": 1455.42
+    }
+  ]
+}

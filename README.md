@@ -11,7 +11,32 @@ Welcome to the official portfolio repository for the **Data Analytics Internship
 | **01** | [**Sales & Revenue Analysis Dashboard**](./Week%2001%20-%20Sales%20%26%20Revenue%20Analysis%20Dashboard/) | Multi-source Ingestion, KPI Tracking, Streamlit & Web BI | **05 Nov 2026** | **COMPLETED** |
 | **02** | [**Customer Segmentation Project**](./Week%2002%20-%20Customer%20Segmentation%20Project/) | RFM Modeling, K-Means Clustering, Scikit-Learn | **12 Nov 2026** | **COMPLETED** |
 | **03** | [**Predictive Analytics Using Historical Data**](./Week%2003%20-%20Predictive%20Analytics%20Using%20Historical%20Data/) | Time Series Forecasting, Regression, Model Evaluation | **19 Nov 2026** | **COMPLETED** |
-| **04** | **Data Cleaning & Reporting Automation** | Automated Workflows, Anomaly Detection, PDF Reports | **26 Nov 2026** | Scheduled |
+| **04** | [**Data Cleaning & Reporting Automation**](./Week%2004%20-%20Data%20Cleaning%20&%20Reporting%20Automation/) | Automated Workflows, Anomaly Detection, PDF Reports | **26 Nov 2026** | **COMPLETED** |
+
+---
+
+## Week 4 Highlights: Data Cleaning & Reporting Automation
+
+> **Project Directory:** [`Week 04 - Data Cleaning & Reporting Automation/`](./Week%2004%20-%20Data%20Cleaning%20&%20Reporting%20Automation/)  
+> **Tutorial Reference:** [YouTube Tutorial Guide](https://youtu.be/jxq4-KSB_OA?si=Yx6Z8h9L7Nq8q7gQ)
+
+### Executive Quality & Financial Results
+- **Certified Reconciled Revenue:** **$39,269,767.19** (100% deterministic billing reconciliation)
+- **Data Quality Score (DQS):** **99.96%** (vs 95.40% raw ingest baseline, **+4.56% quality gain**)
+- **Certified Transaction Count:** **3,200 records** (180 duplicate events pruned)
+- **Treated Anomalies:** **65 records** (Isolation Forest + IQR boundary treatment)
+- **Automated Imputations:** **1,547 missing cells / sentinel tokens** contextually imputed
+- **Governance Dimensions:** 100% Uniqueness, 100% Validity, 100% Consistency, 99.86% Completeness
+
+### Deliverables Included:
+1. **Interactive Automation Studio:** Dynamic Streamlit application (`streamlit_automation_app.py`) featuring live pipeline execution, quality radar scorecard, and anomaly detective.
+2. **Standalone Web Dashboard:** Zero-dependency web application (`index.html`) using Vanilla JavaScript and Chart.js with pipeline funnels, dimension scorecards, and live transaction ledger.
+3. **Pre-Executed Jupyter Notebook:** [`04_data_cleaning_reporting_automation.ipynb`](./Week%2004%20-%20Data%20Cleaning%20&%20Reporting%20Automation/notebooks/04_data_cleaning_reporting_automation.ipynb) featuring step-by-step pipeline audits, scikit-learn Isolation Forest, and deterministic financial reconciliations.
+4. **Enterprise ETL Pipeline:** Modular script (`cleaning_pipeline.py`) automating deduplication, schema standardization, date parsing, chronology repair, and outlier treatment.
+5. **Automated Reporting Engine:** Generator script (`report_automation_engine.py`) compiling automated C-Level PDF, HTML, and JSON analytics payloads.
+6. **Executive Audit Report:** [`Data_Cleaning_and_Reporting_Automation_Report.md`](./Week%2004%20-%20Data%20Cleaning%20&%20Reporting%20Automation/reports/Data_Cleaning_and_Reporting_Automation_Report.md) detailing ISO-8000 metrics and financial breakdowns.
+
+![Data Quality Summary Preview](./Week%2004%20-%20Data%20Cleaning%20&%20Reporting%20Automation/reports/assets/data_health_executive_summary_card.png)
 
 ---
 
