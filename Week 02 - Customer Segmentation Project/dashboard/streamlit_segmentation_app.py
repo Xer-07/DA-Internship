@@ -17,7 +17,7 @@ import streamlit as st
 
 st.set_page_config(
     page_title="Customer Segmentation Studio | ML Clustering",
-    page_icon="👥",
+    page_icon=None,
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -72,7 +72,7 @@ k_clusters = st.sidebar.slider("Number of Clusters (k)", min_value=2, max_value=
 
 # Feature selection for clustering
 st.sidebar.markdown("---")
-st.sidebar.subheader("🎯 Clustering Features")
+st.sidebar.subheader("Clustering Features")
 all_features = ["Annual_Income", "Spending_Score", "Recency_Days", "Frequency", "Monetary_Total", "Web_Visits_Per_Month"]
 selected_features = st.sidebar.multiselect(
     "Select Model Attributes",
@@ -113,7 +113,7 @@ def run_dynamic_clustering(sub_df, features, k):
 clustered_df, km_model = run_dynamic_clustering(view_df, selected_features, k_clusters)
 
 # ----------------- HEADER & EXECUTIVE SUMMARY -----------------
-st.title("👥 Customer Segmentation & Behavioral Analytics Studio")
+st.title("Customer Segmentation & Behavioral Analytics Studio")
 st.markdown(f"**Persona Intelligence & RFM Profiling** | Audited Base: `{len(clustered_df):,}` Customers | Model Configuration: **K-Means ($k={k_clusters}$)**")
 
 # TOP KPI SCORECARD
@@ -137,7 +137,7 @@ with c5:
 
 # ----------------- VISUALIZATIONS SECTION -----------------
 st.markdown("---")
-tab1, tab2, tab3, tab4 = st.tabs(["🌌 PCA Space & Clusters", "📊 Demographic & Income Matrix", "🎯 RFM Segmentation", "📋 Marketing Action Playbook"])
+tab1, tab2, tab3, tab4 = st.tabs(["PCA Space & Clusters", "Demographic & Income Matrix", "RFM Segmentation", "Marketing Action Playbook"])
 
 with tab1:
     col_pca1, col_pca2 = st.columns([7, 3])
@@ -236,7 +236,7 @@ with tab3:
         st.plotly_chart(fig_fm, use_container_width=True)
 
 with tab4:
-    st.subheader("🎯 Targeted Omnichannel Marketing Playbook")
+    st.subheader("Targeted Omnichannel Marketing Playbook")
     
     # Generate Profile Summary Table
     summary_table = clustered_df.groupby("Dynamic_Cluster").agg(
@@ -253,7 +253,7 @@ with tab4:
     cols = st.columns(3)
     cols[0].markdown("""
     <div class="persona-card">
-        <div class="persona-title">👑 VIP Champions</div>
+        <div class="persona-title">VIP Champions</div>
         <span class="persona-badge" style="background: rgba(16, 185, 129, 0.2); color: #34D399;">Top 18% Spend</span>
         <p style="color: #94A3B8; font-size: 0.85rem;"><strong>Action:</strong> Dedicated account executive, early access to flagship tech products, zero-minimum threshold shipping, exclusive VIP club events.</p>
     </div>
@@ -261,7 +261,7 @@ with tab4:
 
     cols[1].markdown("""
     <div class="persona-card">
-        <div class="persona-title">🚀 Tech Enthusiasts</div>
+        <div class="persona-title">Tech Enthusiasts</div>
         <span class="persona-badge" style="background: rgba(139, 92, 246, 0.2); color: #A78BFA;">High Velocity</span>
         <p style="color: #94A3B8; font-size: 0.85rem;"><strong>Action:</strong> Gamified loyalty drops, new device launch webinars, tech accessory cross-sells, fast-checkout push notifications.</p>
     </div>
@@ -269,7 +269,7 @@ with tab4:
 
     cols[2].markdown("""
     <div class="persona-card">
-        <div class="persona-title">⚠️ At-Risk / Lapsed</div>
+        <div class="persona-title">At-Risk / Lapsed</div>
         <span class="persona-badge" style="background: rgba(239, 68, 68, 0.2); color: #F87171;">Churn Alert</span>
         <p style="color: #94A3B8; font-size: 0.85rem;"><strong>Action:</strong> 20% discount reactivation coupon, feedback exit survey, direct email outreach from customer experience team.</p>
     </div>
@@ -277,7 +277,7 @@ with tab4:
 
 # ----------------- CUSTOMER SEARCH & EXPORT -----------------
 st.markdown("---")
-st.subheader("🔍 Customer Segment Explorer")
+st.subheader("Customer Segment Explorer")
 search_term = st.text_input("Search Customer by Name or ID:", "")
 table_df = clustered_df
 if search_term:
@@ -293,7 +293,7 @@ st.dataframe(table_df[display_cols].head(300), use_container_width=True, height=
 csv_buff = io.StringIO()
 table_df.to_csv(csv_buff, index=False)
 st.download_button(
-    "📥 Export Segmented Customer List to CSV",
+    "Export Segmented Customer List to CSV",
     data=csv_buff.getvalue(),
     file_name="segmented_customers_export.csv",
     mime="text/csv"

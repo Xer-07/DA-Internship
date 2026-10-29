@@ -1,4 +1,4 @@
-# 📊 Week 01: Sales & Revenue Analysis Dashboard
+# Week 01: Sales & Revenue Analysis Dashboard
 
 > **Data Analytics Internship — Project 01 of 04**  
 > **Status:** Completed & Ready for Submission  
@@ -6,7 +6,7 @@
 
 ---
 
-## 🎯 Project Overview & Objectives
+## Project Overview & Objectives
 The primary objective of this project is to build an enterprise-grade analytics dashboard system to monitor, analyze, and optimize multi-year sales revenue, profitability, product rankings, and regional performance. 
 
 This repository implements both:
@@ -17,7 +17,7 @@ This repository implements both:
 
 ---
 
-## 📈 Executive KPI Snapshot
+## Executive KPI Snapshot
 - **Total Net Revenue:** **$5,649,578.26**
 - **Total Net Profit:** **$1,913,734.76**
 - **Net Operating Profit Margin:** **33.87%**
@@ -30,7 +30,7 @@ This repository implements both:
 
 ---
 
-## 🚀 Key Features Implemented
+## Key Features Implemented
 
 ### 1. Multi-Format Data Ingestion
 - **CSV Support:** Raw and processed transaction data loading with Pandas.
@@ -52,7 +52,7 @@ This repository implements both:
 
 ---
 
-## 🖼️ Visual Analytics Preview
+## Visual Analytics Preview
 
 | Monthly Revenue & Profit Trend | Category Profitability Breakdown |
 | :---: | :---: |
@@ -64,7 +64,7 @@ This repository implements both:
 
 ---
 
-## 📂 Project Directory Structure
+## Project Directory Structure
 
 ```text
 Week 01 - Sales & Revenue Analysis Dashboard/
@@ -98,7 +98,7 @@ Week 01 - Sales & Revenue Analysis Dashboard/
 
 ---
 
-## ⚡ How to Run
+## How to Run
 
 ### Option 1: Standalone Web Dashboard (Fastest - No Setup Needed!)
 1. Navigate to: `Week 01 - Sales & Revenue Analysis Dashboard/dashboard/web_dashboard/`
@@ -125,7 +125,7 @@ python "Week 01 - Sales & Revenue Analysis Dashboard/src/generate_charts.py"
 
 ---
 
-## 📋 Deliverables & Verification Checklist
+## Deliverables & Verification Checklist
 - [x] Excel and CSV datasets generated and cleaned.
 - [x] Multi-source ingestion pipeline (CSV, Excel, SQLite).
 - [x] DAX-equivalent measures & business KPIs calculated.

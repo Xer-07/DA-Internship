@@ -1,4 +1,4 @@
-# 👥 Customer Segmentation & Behavioral Strategy Report
+# Customer Segmentation & Behavioral Strategy Report
 
 **Prepared for:** Chief Marketing Officer (CMO) & Commercial Strategy Directorate  
 **Prepared by:** Data Analytics Intern  

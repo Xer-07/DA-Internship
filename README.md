@@ -1,31 +1,31 @@
-# 💼 Data Analytics Internship Portfolio
+# Data Analytics Internship Portfolio
 
 Welcome to the official portfolio repository for the **Data Analytics Internship**. This repository tracks all project milestones, datasets, analytical notebooks, executive dashboards, and codebases structured on a strict **week-by-week** progression.
 
 ---
 
-## 📅 4-Week Internship Project Roadmap
+## 4-Week Internship Project Roadmap
 
 | Week | Milestone / Project Name | Key Methodologies & Tools | Due Date | Status |
 | :---: | :--- | :--- | :---: | :---: |
-| **01** | [**Sales & Revenue Analysis Dashboard**](./Week%2001%20-%20Sales%20%26%20Revenue%20Analysis%20Dashboard/) | Multi-source Ingestion, KPI Tracking, Streamlit & Web BI | **05 Nov 2026** | **✅ COMPLETED** |
-| **02** | [**Customer Segmentation Project**](./Week%2002%20-%20Customer%20Segmentation%20Project/) | RFM Modeling, K-Means Clustering, Scikit-Learn | **12 Nov 2026** | **✅ COMPLETED** |
-| **03** | **Predictive Analytics Using Historical Data** | Time Series Forecasting, Regression, Model Evaluation | **19 Nov 2026** | ⏳ Scheduled |
-| **04** | **Data Cleaning & Reporting Automation** | Automated Workflows, Anomaly Detection, PDF Reports | **26 Nov 2026** | ⏳ Scheduled |
+| **01** | [**Sales & Revenue Analysis Dashboard**](./Week%2001%20-%20Sales%20%26%20Revenue%20Analysis%20Dashboard/) | Multi-source Ingestion, KPI Tracking, Streamlit & Web BI | **05 Nov 2026** | **COMPLETED** |
+| **02** | [**Customer Segmentation Project**](./Week%2002%20-%20Customer%20Segmentation%20Project/) | RFM Modeling, K-Means Clustering, Scikit-Learn | **12 Nov 2026** | **COMPLETED** |
+| **03** | **Predictive Analytics Using Historical Data** | Time Series Forecasting, Regression, Model Evaluation | **19 Nov 2026** | Scheduled |
+| **04** | **Data Cleaning & Reporting Automation** | Automated Workflows, Anomaly Detection, PDF Reports | **26 Nov 2026** | Scheduled |
 
 ---
 
-## 🌟 Week 2 Highlights: Customer Segmentation Project
+## Week 2 Highlights: Customer Segmentation Project
 
 > **Project Directory:** [`Week 02 - Customer Segmentation Project/`](./Week%2002%20-%20Customer%20Segmentation%20Project/)  
 > **Tutorial Reference:** [YouTube Tutorial Guide](https://youtu.be/-LGwdrajMZ0?si=ci95cNWGApC8WKqF)
 
 ### Customer Behavioral Personas Uncovered
-- **👑 VIP Champions (18.0%):** Top spenders ($18,372/yr average spend) generating **41.1% of enterprise revenue** with 14.2 days recency.
-- **💼 Loyal Mainstream (31.0%):** Core steady account base ($7,560/yr spend) driving consistent volume across regions.
-- **⚡ Emerging Tech Lovers (17.0%):** Younger high-velocity gadget adopters ($8,757/yr spend, 24.5 web visits/month).
-- **🏷️ Bargain Hunters (22.6%):** Price-sensitive deal seekers ($2,080/yr spend) responsive to clearance campaigns.
-- **⚠️ At-Risk / Lapsed (11.6%):** Dormant high-potential customers (210.8 days recency) targeted for win-back reactivation.
+- **VIP Champions (18.0%):** Top spenders ($18,372/yr average spend) generating **41.1% of enterprise revenue** with 14.2 days recency.
+- **Loyal Mainstream (31.0%):** Core steady account base ($7,560/yr spend) driving consistent volume across regions.
+- **Emerging Tech Lovers (17.0%):** Younger high-velocity gadget adopters ($8,757/yr spend, 24.5 web visits/month).
+- **Bargain Hunters (22.6%):** Price-sensitive deal seekers ($2,080/yr spend) responsive to clearance campaigns.
+- **At-Risk / Lapsed (11.6%):** Dormant high-potential customers (210.8 days recency) targeted for win-back reactivation.
 
 ### Deliverables Included:
 1. **Interactive Segmentation Studio:** Dynamic Streamlit application (`streamlit_segmentation_app.py`) with real-time cluster tuning ($k \in [2, 8]$) and Plotly 2D/3D scatter plots.
@@ -38,7 +38,7 @@ Welcome to the official portfolio repository for the **Data Analytics Internship
 
 ---
 
-## 🌟 Week 1 Highlights: Sales & Revenue Analysis Dashboard
+## Week 1 Highlights: Sales & Revenue Analysis Dashboard
 
 > **Project Directory:** [`Week 01 - Sales & Revenue Analysis Dashboard/`](./Week%2001%20-%20Sales%20%26%20Revenue%20Analysis%20Dashboard/)  
 > **Tutorial Reference:** [YouTube Tutorial Guide](https://youtu.be/hhZ6EDiVboI?si=pcC3NkRkvTbOmbUK)
@@ -60,7 +60,7 @@ Welcome to the official portfolio repository for the **Data Analytics Internship
 
 ---
 
-## 🛠️ Technology Stack & Libraries
+## Technology Stack & Libraries
 
 - **Programming & Scripting:** Python 3.12, JavaScript (ES6+), HTML5, CSS3
 - **Data Engineering & Manipulation:** Pandas, NumPy, OpenPyXL, XlsxWriter, SQLite3
@@ -70,7 +70,7 @@ Welcome to the official portfolio repository for the **Data Analytics Internship
 
 ---
 
-## 🚀 Quickstart & Evaluation Instructions
+## Quickstart & Evaluation Instructions
 
 ### 1. View the Standalone Web Dashboard (Instant)
 Simply open the following file in Google Chrome, Microsoft Edge, or Mozilla Firefox:
@@ -96,6 +96,6 @@ Open [`Week 01 - Sales & Revenue Analysis Dashboard/notebooks/01_sales_revenue_e
 
 ---
 
-## 👤 Author
+## Author
 **Data Analytics Intern**  
 *Repository maintained week-by-week for internship milestone verification and evaluation.*

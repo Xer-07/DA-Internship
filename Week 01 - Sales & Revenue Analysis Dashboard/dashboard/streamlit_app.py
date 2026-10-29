@@ -15,7 +15,7 @@ import streamlit as st
 # Configure page metadata
 st.set_page_config(
     page_title="Sales & Revenue Executive Dashboard",
-    page_icon="📊",
+    page_icon=None,
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -94,7 +94,7 @@ st.sidebar.title("Analytics Control")
 st.sidebar.caption("Filter data & configure KPIs dynamically")
 
 # File Upload Section (Allows importing CSV or Excel)
-with st.sidebar.expander("📂 Import Custom Data (Excel/CSV)", expanded=False):
+with st.sidebar.expander("Import Custom Data (Excel/CSV)", expanded=False):
     uploaded_file = st.file_uploader("Upload CSV or XLSX file", type=["csv", "xlsx"])
     if uploaded_file is not None:
         try:
@@ -112,7 +112,7 @@ with st.sidebar.expander("📂 Import Custom Data (Excel/CSV)", expanded=False):
             st.error(f"Error parsing file: {e}")
 
 st.sidebar.markdown("---")
-st.sidebar.subheader("🎯 Interactive Slicers")
+st.sidebar.subheader("Interactive Slicers")
 
 # Date Range Slicer
 min_date = raw_df["Order_Date"].min().date()
@@ -159,7 +159,7 @@ if selected_ship_mode != "All Modes":
     df = df[df["Ship_Mode"] == selected_ship_mode]
 
 # ----------------- HEADER & EXECUTIVE SUMMARY -----------------
-st.title("📈 Executive Sales & Revenue Dashboard")
+st.title("Executive Sales & Revenue Dashboard")
 st.markdown(f"**Enterprise Performance Monitoring** | Active Filter: `{selected_region}` • `{selected_category}` • `{selected_segment}` | Records: `{len(df):,}`")
 
 # KPI Summary Computation
@@ -219,9 +219,9 @@ with kpi5:
     """, unsafe_allow_html=True)
 
 # ----------------- VISUALIZATIONS SECTION -----------------
-st.markdown("### 📊 Financial & Revenue Analytics")
+st.markdown("### Financial & Revenue Analytics")
 
-tab1, tab2, tab3 = st.tabs(["📈 Revenue Trends & Trajectory", "🏆 Products & Categories", "🗺️ Geographic & Channel Segments"])
+tab1, tab2, tab3 = st.tabs(["Revenue Trends & Trajectory", "Products & Categories", "Geographic & Channel Segments"])
 
 with tab1:
     col_t1, col_t2 = st.columns([7, 3])
@@ -364,7 +364,7 @@ with tab3:
 
 # ----------------- INTERACTIVE DATA EXPLORER & EXPORT -----------------
 st.markdown("---")
-st.subheader("🔍 Interactive Transactions Explorer")
+st.subheader("Interactive Transactions Explorer")
 
 search_term = st.text_input("Quick Search by Customer Name, Order ID, or Product Name:", "")
 filtered_table = df
@@ -388,7 +388,7 @@ st.dataframe(
 csv_buffer = io.StringIO()
 filtered_table.to_csv(csv_buffer, index=False)
 st.download_button(
-    label="📥 Export Filtered Data to CSV",
+    label="Export Filtered Data to CSV",
     data=csv_buffer.getvalue(),
     file_name="filtered_sales_data.csv",
     mime="text/csv"

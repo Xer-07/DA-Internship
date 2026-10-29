@@ -1,4 +1,4 @@
-# 📊 Executive Sales & Revenue Insights Report
+# Executive Sales & Revenue Insights Report
 
 **Prepared for:** Senior Executive Leadership & Commercial Strategy Committee  
 **Prepared by:** Data Analytics Intern  

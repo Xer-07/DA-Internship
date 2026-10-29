@@ -1,4 +1,4 @@
-# 👥 Week 02: Customer Segmentation Project
+# Week 02: Customer Segmentation Project
 
 > **Data Analytics Internship — Project 02 of 04**  
 > **Status:** Completed & Ready for Submission  
@@ -6,7 +6,7 @@
 
 ---
 
-## 🎯 Project Overview & Objectives
+## Project Overview & Objectives
 The primary objective of this project is to apply unsupervised machine learning and behavioral analytics to segment a 2,000-customer database into actionable business personas. By combining **RFM Analysis (Recency, Frequency, Monetary)** with **K-Means Clustering** and **Principal Component Analysis (PCA)**, we uncover customer preferences, price elasticity, and lifetime value drivers.
 
 This repository implements:
@@ -18,21 +18,21 @@ This repository implements:
 
 ---
 
-## 🏆 Discovered Customer Personas Summary
+## Discovered Customer Personas Summary
 
 | Persona | Size | % Share | Avg Annual Income | Avg Annual Spend | Recency | Orders/Yr | Core Marketing Strategy |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **👑 VIP Champions** | 359 | 18.0% | $122,840 | **$18,372** | 14.2 Days | 25.8 | Concierge service, product previews, VIP perks |
-| **💼 Loyal Mainstream** | 619 | 31.0% | $76,120 | **$7,560** | 32.5 Days | 14.9 | Cross-category bundling & loyalty milestones |
-| **⚡ Tech Lovers** | 339 | 17.0% | $68,450 | **$8,757** | 21.0 Days | 17.6 | Gadget pre-orders, digital launches, app drops |
-| **🏷️ Bargain Hunters** | 452 | 22.6% | $38,200 | **$2,080** | 52.4 Days | 8.8 | Flash sales, clearance alerts, basket thresholds |
-| **⚠️ At-Risk / Lapsed**| 231 | 11.6% | $87,900 | **$3,802** | 210.8 Days| 5.9 | Precision win-back vouchers, satisfaction surveys |
+| **VIP Champions** | 359 | 18.0% | $122,840 | **$18,372** | 14.2 Days | 25.8 | Concierge service, product previews, VIP perks |
+| **Loyal Mainstream** | 619 | 31.0% | $76,120 | **$7,560** | 32.5 Days | 14.9 | Cross-category bundling & loyalty milestones |
+| **Tech Lovers** | 339 | 17.0% | $68,450 | **$8,757** | 21.0 Days | 17.6 | Gadget pre-orders, digital launches, app drops |
+| **Bargain Hunters** | 452 | 22.6% | $38,200 | **$2,080** | 52.4 Days | 8.8 | Flash sales, clearance alerts, basket thresholds |
+| **At-Risk / Lapsed**| 231 | 11.6% | $87,900 | **$3,802** | 210.8 Days| 5.9 | Precision win-back vouchers, satisfaction surveys |
 
 ![Persona Cards Preview](reports/assets/cluster_executive_summary_card.png)
 
 ---
 
-## 🚀 Key Features Implemented
+## Key Features Implemented
 
 ### 1. Unsupervised Machine Learning Framework
 - **Data Standardization:** Z-Score normalization (`StandardScaler`) to balance income and frequency scales.
@@ -47,7 +47,7 @@ This repository implements:
 
 ---
 
-## 🖼️ Visual Analytics Preview
+## Visual Analytics Preview
 
 | Elbow & Silhouette Validation | 2D PCA Behavioral Space |
 | :---: | :---: |
@@ -59,7 +59,7 @@ This repository implements:
 
 ---
 
-## 📂 Project Directory Structure
+## Project Directory Structure
 
 ```text
 Week 02 - Customer Segmentation Project/
@@ -93,7 +93,7 @@ Week 02 - Customer Segmentation Project/
 
 ---
 
-## ⚡ How to Run
+## How to Run
 
 ### Option 1: Standalone Web Dashboard (Instant - No Setup Needed!)
 1. Navigate to: `Week 02 - Customer Segmentation Project/dashboard/web_segmentation_dashboard/`
@@ -120,7 +120,7 @@ python "Week 02 - Customer Segmentation Project/src/generate_segmentation_charts
 
 ---
 
-## 📋 Deliverables & Verification Checklist
+## Deliverables & Verification Checklist
 - [x] Multi-dimensional customer dataset generated (CSV and Excel).
 - [x] Feature scaling and RFM modeling completed.
 - [x] Optimal cluster count mathematically validated ($k = 5$ via Elbow & Silhouette).
