@@ -9,9 +9,32 @@ Welcome to the official portfolio repository for the **Data Analytics Internship
 | Week | Milestone / Project Name | Key Methodologies & Tools | Due Date | Status |
 | :---: | :--- | :--- | :---: | :---: |
 | **01** | [**Sales & Revenue Analysis Dashboard**](./Week%2001%20-%20Sales%20%26%20Revenue%20Analysis%20Dashboard/) | Multi-source Ingestion, KPI Tracking, Streamlit & Web BI | **05 Nov 2026** | **✅ COMPLETED** |
-| **02** | **Customer Segmentation Project** | RFM Modeling, K-Means Clustering, Scikit-Learn | **12 Nov 2026** | ⏳ Scheduled |
+| **02** | [**Customer Segmentation Project**](./Week%2002%20-%20Customer%20Segmentation%20Project/) | RFM Modeling, K-Means Clustering, Scikit-Learn | **12 Nov 2026** | **✅ COMPLETED** |
 | **03** | **Predictive Analytics Using Historical Data** | Time Series Forecasting, Regression, Model Evaluation | **19 Nov 2026** | ⏳ Scheduled |
 | **04** | **Data Cleaning & Reporting Automation** | Automated Workflows, Anomaly Detection, PDF Reports | **26 Nov 2026** | ⏳ Scheduled |
+
+---
+
+## 🌟 Week 2 Highlights: Customer Segmentation Project
+
+> **Project Directory:** [`Week 02 - Customer Segmentation Project/`](./Week%2002%20-%20Customer%20Segmentation%20Project/)  
+> **Tutorial Reference:** [YouTube Tutorial Guide](https://youtu.be/-LGwdrajMZ0?si=ci95cNWGApC8WKqF)
+
+### Customer Behavioral Personas Uncovered
+- **👑 VIP Champions (18.0%):** Top spenders ($18,372/yr average spend) generating **41.1% of enterprise revenue** with 14.2 days recency.
+- **💼 Loyal Mainstream (31.0%):** Core steady account base ($7,560/yr spend) driving consistent volume across regions.
+- **⚡ Emerging Tech Lovers (17.0%):** Younger high-velocity gadget adopters ($8,757/yr spend, 24.5 web visits/month).
+- **🏷️ Bargain Hunters (22.6%):** Price-sensitive deal seekers ($2,080/yr spend) responsive to clearance campaigns.
+- **⚠️ At-Risk / Lapsed (11.6%):** Dormant high-potential customers (210.8 days recency) targeted for win-back reactivation.
+
+### Deliverables Included:
+1. **Interactive Segmentation Studio:** Dynamic Streamlit application (`streamlit_segmentation_app.py`) with real-time cluster tuning ($k \in [2, 8]$) and Plotly 2D/3D scatter plots.
+2. **Standalone Web Dashboard:** Zero-dependency web application (`index.html`) using Vanilla JavaScript and Chart.js featuring interactive 2D PCA cluster maps, income vs spending score projections, and customer search.
+3. **Pre-Executed Jupyter Notebook:** [`02_customer_segmentation_clustering.ipynb`](./Week%2002%20-%20Customer%20Segmentation%20Project/notebooks/02_customer_segmentation_clustering.ipynb) with pre-rendered Elbow method, Silhouette score curves, PCA, and RFM boxplots.
+4. **Machine Learning Pipeline:** End-to-end `scikit-learn` script (`segmentation_engine.py`) automating scaling, K-Means, and PCA dimensionality reduction (82.5% variance explained).
+5. **Strategic Marketing Playbook:** [`Customer_Segmentation_Strategy_Report.md`](./Week%2002%20-%20Customer%20Segmentation%20Project/reports/Customer_Segmentation_Strategy_Report.md) outlining targeted multi-channel campaigns.
+
+![Customer Segmentation Preview](./Week%2002%20-%20Customer%20Segmentation%20Project/reports/assets/cluster_executive_summary_card.png)
 
 ---
 
@@ -27,11 +50,11 @@ Welcome to the official portfolio repository for the **Data Analytics Internship
 - **Year-over-Year Growth:** **+17.65% top-line expansion**
 
 ### Deliverables Included:
-1. **Interactive Web Dashboard:** Zero-dependency, modern dark-themed web application (`index.html`) using Vanilla JavaScript and Chart.js. Opens natively in any web browser with live slicers (Year, Region, Category, Segment) and instant CSV export.
-2. **Streamlit Analytics App:** Full-fledged Python dashboard (`streamlit_app.py`) with Plotly interactive graphics and custom CSV/Excel upload support.
-3. **Pre-Executed Jupyter Notebook:** [`01_sales_revenue_eda_and_kpis.ipynb`](./Week%2001%20-%20Sales%20%26%20Revenue%20Analysis%20Dashboard/notebooks/01_sales_revenue_eda_and_kpis.ipynb) containing comprehensive EDA, null audits, calendar feature engineering, and statistical visualizations.
+1. **Interactive Web Dashboard:** Zero-dependency, modern dark-themed web application (`index.html`) using Vanilla JavaScript and Chart.js.
+2. **Streamlit Analytics App:** Full-fledged Python dashboard (`streamlit_app.py`) with Plotly interactive graphics.
+3. **Pre-Executed Jupyter Notebook:** [`01_sales_revenue_eda_and_kpis.ipynb`](./Week%2001%20-%20Sales%20%26%20Revenue%20Analysis%20Dashboard/notebooks/01_sales_revenue_eda_and_kpis.ipynb).
 4. **Multi-Source Data Architecture:** Raw and cleaned datasets in CSV, multi-sheet Excel, and SQLite database formats.
-5. **C-Level Executive Strategy Report:** [`Executive_Sales_Insights_Report.md`](./Week%2001%20-%20Sales%20%26%20Revenue%20Analysis%20Dashboard/reports/Executive_Sales_Insights_Report.md) with data-backed business insights on discount sensitivity, category performance, and geographic expansion.
+5. **C-Level Executive Strategy Report:** [`Executive_Sales_Insights_Report.md`](./Week%2001%20-%20Sales%20%26%20Revenue%20Analysis%20Dashboard/reports/Executive_Sales_Insights_Report.md).
 
 ![Executive KPI Preview](./Week%2001%20-%20Sales%20%26%20Revenue%20Analysis%20Dashboard/reports/assets/kpi_summary_dashboard.png)
 

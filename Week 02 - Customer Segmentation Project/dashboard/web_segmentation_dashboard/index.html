@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Segmentation Studio | Behavioral Analytics & Persona AI</title>
+  <meta name="description" content="Enterprise Customer Segmentation Studio featuring K-Means clustering, PCA dimensionality reduction, RFM behavioral analysis, and targeted marketing campaigns.">
+  
+  <!-- Modern Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dark-theme">
+  <div class="dashboard-layout">
+    
+    <!-- TOP NAVIGATION -->
+    <header class="top-nav" id="mainHeader">
+      <div class="nav-brand">
+        <div class="brand-logo">
+          <i class="fa-solid fa-users-viewfinder"></i>
+        </div>
+        <div>
+          <h1 class="brand-title">SegmentSphere <span>Customer AI</span></h1>
+          <p class="brand-subtitle">Demographic & Behavioral Clustering (K-Means • RFM • PCA)</p>
+        </div>
+      </div>
+
+      <div class="nav-actions">
+        <div class="badge-status">
+          <span class="live-dot"></span> 2,000 Customers Clustered
+        </div>
+        <button id="exportCsvBtn" class="btn btn-secondary">
+          <i class="fa-solid fa-file-arrow-down"></i> Export Segmented CSV
+        </button>
+        <button id="printReportBtn" class="btn btn-primary">
+          <i class="fa-solid fa-print"></i> Print Strategy PDF
+        </button>
+        <button id="themeToggleBtn" class="btn btn-icon" title="Toggle Theme">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- SLICER FILTER CONTROL BAR -->
+    <section class="filter-bar" id="filterControlBar">
+      <div class="filter-group">
+        <label for="clusterFilter"><i class="fa-solid fa-layer-group"></i> Customer Persona</label>
+        <select id="clusterFilter" class="filter-select">
+          <option value="All">All Personas (5 Clusters)</option>
+          <option value="VIP Champions">VIP Champions</option>
+          <option value="Loyal Mainstream">Loyal Mainstream</option>
+          <option value="Emerging Tech Lovers">Emerging Tech Lovers</option>
+          <option value="Bargain Hunters">Bargain Hunters</option>
+          <option value="At-Risk / Lapsed">At-Risk / Lapsed</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label for="regionFilter"><i class="fa-solid fa-earth-americas"></i> Region</label>
+        <select id="regionFilter" class="filter-select">
+          <option value="All">All Regions</option>
+          <option value="West">West Region</option>
+          <option value="East">East Region</option>
+          <option value="Central">Central Region</option>
+          <option value="South">South Region</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label for="categoryFilter"><i class="fa-solid fa-bag-shopping"></i> Preferred Category</label>
+        <select id="categoryFilter" class="filter-select">
+          <option value="All">All Categories</option>
+          <option value="Technology">Technology</option>
+          <option value="Furniture">Furniture</option>
+          <option value="Office Supplies">Office Supplies</option>
+          <option value="Fashion & Apparel">Fashion & Apparel</option>
+          <option value="Home & Kitchen">Home & Kitchen</option>
+        </select>
+      </div>
+
+      <div class="filter-actions">
+        <button id="resetFiltersBtn" class="btn btn-ghost" title="Reset all slicers">
+          <i class="fa-solid fa-rotate-left"></i> Reset Slicers
+        </button>
+      </div>
+    </section>
+
+    <!-- PERSONA CARDS GRID -->
+    <main class="main-content">
+      <div class="personas-grid" id="personasGrid">
+        <!-- Persona 1 -->
+        <div class="persona-card card-vip" data-cluster="VIP Champions">
+          <div class="persona-header">
+            <span class="persona-name">👑 VIP Champions</span>
+            <span class="badge badge-emerald">Top Spenders</span>
+          </div>
+          <div class="persona-spend" id="vipSpend">$18,372</div>
+          <div class="persona-meta">
+            <span><strong>359</strong> users (18.0%)</span> • <span>Score: <strong>86</strong>/100</span>
+          </div>
+          <p class="persona-desc">High income, peak brand loyalty, and highest frequency. Drives disproportionate annual revenue.</p>
+          <div class="persona-action">
+            <i class="fa-solid fa-bullhorn"></i> <strong>Play:</strong> Concierge service, product previews, zero-threshold VIP perks.
+          </div>
+        </div>
+
+        <!-- Persona 2 -->
+        <div class="persona-card card-mainstream" data-cluster="Loyal Mainstream">
+          <div class="persona-header">
+            <span class="persona-name">💼 Loyal Mainstream</span>
+            <span class="badge badge-blue">Core Anchor</span>
+          </div>
+          <div class="persona-spend" id="mainstreamSpend">$7,560</div>
+          <div class="persona-meta">
+            <span><strong>619</strong> users (31.0%)</span> • <span>Score: <strong>62</strong>/100</span>
+          </div>
+          <p class="persona-desc">Steady recurring revenue base. Moderate income and consistent re-order intervals.</p>
+          <div class="persona-action">
+            <i class="fa-solid fa-bullhorn"></i> <strong>Play:</strong> Cross-category bundle promotions and loyalty tier milestones.
+          </div>
+        </div>
+
+        <!-- Persona 3 -->
+        <div class="persona-card card-tech" data-cluster="Emerging Tech Lovers">
+          <div class="persona-header">
+            <span class="persona-name">⚡ Tech Lovers</span>
+            <span class="badge badge-purple">High Velocity</span>
+          </div>
+          <div class="persona-spend" id="techSpend">$8,757</div>
+          <div class="persona-meta">
+            <span><strong>339</strong> users (17.0%)</span> • <span>Score: <strong>74</strong>/100</span>
+          </div>
+          <p class="persona-desc">Younger demographics, highest web visits per month, and instant adoption of new hardware.</p>
+          <div class="persona-action">
+            <i class="fa-solid fa-bullhorn"></i> <strong>Play:</strong> Gadget pre-orders, digital webinar access, and gamified point drops.
+          </div>
+        </div>
+
+        <!-- Persona 4 -->
+        <div class="persona-card card-bargain" data-cluster="Bargain Hunters">
+          <div class="persona-header">
+            <span class="persona-name">🏷️ Bargain Hunters</span>
+            <span class="badge badge-amber">Price Sensitive</span>
+          </div>
+          <div class="persona-spend" id="bargainSpend">$2,080</div>
+          <div class="persona-meta">
+            <span><strong>452</strong> users (22.6%)</span> • <span>Score: <strong>36</strong>/100</span>
+          </div>
+          <p class="persona-desc">High deal elasticity. Actively browse promotions and heavily utilize discount coupons.</p>
+          <div class="persona-action">
+            <i class="fa-solid fa-bullhorn"></i> <strong>Play:</strong> Flash sales, end-of-season clearance outlets, free gift triggers.
+          </div>
+        </div>
+
+        <!-- Persona 5 -->
+        <div class="persona-card card-atrisk" data-cluster="At-Risk / Lapsed">
+          <div class="persona-header">
+            <span class="persona-name">⚠️ At-Risk / Lapsed</span>
+            <span class="badge badge-danger">Churn Threat</span>
+          </div>
+          <div class="persona-spend" id="atriskSpend">$3,802</div>
+          <div class="persona-meta">
+            <span><strong>231</strong> users (11.6%)</span> • <span>Recency: <strong>210d</strong></span>
+          </div>
+          <p class="persona-desc">Substantial historical spenders experiencing declining order frequency and long dormant periods.</p>
+          <div class="persona-action">
+            <i class="fa-solid fa-bullhorn"></i> <strong>Play:</strong> 'We miss you' 20% reactivation offer, satisfaction outreach.
+          </div>
+        </div>
+      </div>
+
+      <!-- CHARTS SECTION ROW 1 -->
+      <div class="charts-row">
+        <!-- 2D PCA Cluster Map -->
+        <div class="chart-card chart-large">
+          <div class="chart-header">
+            <div>
+              <h3 class="chart-title">2D PCA Behavioral Space</h3>
+              <p class="chart-desc">Customer dimensionality reduction capturing 82.5% of total variance</p>
+            </div>
+            <div class="chart-legend-custom">
+              <span class="legend-item"><span class="dot dot-emerald"></span> VIP</span>
+              <span class="legend-item"><span class="dot dot-blue"></span> Mainstream</span>
+              <span class="legend-item"><span class="dot dot-purple"></span> Tech</span>
+              <span class="legend-item"><span class="dot dot-amber"></span> Bargain</span>
+              <span class="legend-item"><span class="dot dot-red"></span> At-Risk</span>
+            </div>
+          </div>
+          <div class="chart-canvas-wrapper">
+            <canvas id="pcaScatterChart"></canvas>
+          </div>
+        </div>
+
+        <!-- Persona Revenue Share Doughnut -->
+        <div class="chart-card chart-small">
+          <div class="chart-header">
+            <div>
+              <h3 class="chart-title">Revenue by Persona</h3>
+              <p class="chart-desc">Total dollar contribution per cluster</p>
+            </div>
+          </div>
+          <div class="chart-canvas-wrapper donut-wrapper">
+            <canvas id="personaRevenueDonut"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- CHARTS SECTION ROW 2 -->
+      <div class="charts-row">
+        <!-- Income vs Spending Score -->
+        <div class="chart-card chart-medium">
+          <div class="chart-header">
+            <div>
+              <h3 class="chart-title">Annual Income vs Spending Score</h3>
+              <p class="chart-desc">Demographic earnings mapped to customer engagement index</p>
+            </div>
+          </div>
+          <div class="chart-canvas-wrapper">
+            <canvas id="incomeScoreScatter"></canvas>
+          </div>
+        </div>
+
+        <!-- RFM Behavioral Profile Comparison -->
+        <div class="chart-card chart-medium">
+          <div class="chart-header">
+            <div>
+              <h3 class="chart-title">RFM Behavioral Attributes</h3>
+              <p class="chart-desc">Recency, Frequency, and Monetary metrics across personas</p>
+            </div>
+          </div>
+          <div class="chart-canvas-wrapper">
+            <canvas id="rfmBarChart"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- CUSTOMER TABLE EXPLORER -->
+      <div class="data-table-card" id="tableCard">
+        <div class="table-header">
+          <div>
+            <h3 class="table-title">Live Customer Segment Explorer</h3>
+            <p class="table-subtitle">Showing active sliced customer profiles with real-time search</p>
+          </div>
+          <div class="table-search-box">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <input type="text" id="tableSearchInput" placeholder="Search customer name, ID, or city...">
+          </div>
+        </div>
+
+        <div class="table-responsive">
+          <table class="data-table" id="customerTable">
+            <thead>
+              <tr>
+                <th>Customer ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Region</th>
+                <th>City</th>
+                <th>Annual Income</th>
+                <th>Spending Score</th>
+                <th>Recency</th>
+                <th>Orders</th>
+                <th>Annual Spend</th>
+                <th>Assigned Persona</th>
+              </tr>
+            </thead>
+            <tbody id="customerTableBody">
+              <!-- Dynamically populated rows -->
+            </tbody>
+          </table>
+        </div>
+
+        <div class="table-pagination">
+          <span class="pagination-info" id="paginationInfo">Showing 1 to 15 of 2,000 customers</span>
+          <div class="pagination-buttons">
+            <button id="prevPageBtn" class="btn btn-sm btn-secondary" disabled>
+              <i class="fa-solid fa-chevron-left"></i> Previous
+            </button>
+            <span class="current-page-badge" id="currentPageBadge">Page 1</span>
+            <button id="nextPageBtn" class="btn btn-sm btn-secondary">
+              Next <i class="fa-solid fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="dashboard-footer">
+      <div>
+        <strong>Data Analytics Internship</strong> • Week 02 Capstone Project
+      </div>
+      <div>
+        Customer Segmentation Studio • Built with K-Means, Scikit-Learn & Chart.js
+      </div>
+    </footer>
+  </div>
+
+  <!-- LOAD CUSTOMER DATASET -->
+  <script src="customer_data.js"></script>
+  <!-- APPLICATION LOGIC -->
+  <script src="app.js"></script>
+</body>
+</html>
